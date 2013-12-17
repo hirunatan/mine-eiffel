@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-12-0 http://www.eiffel.com/developers/xml/configuration-1-12-0.xsd" name="mine-eiffel" uuid="E5355F62-3717-4800-B9DF-12F5F783431E">
+	<target name="mine-eiffel">
+		<root class="APPLICATION" feature="make"/>
+		<option warning="true" void_safety="transitional" syntax="standard">
+			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
+		</option>
+		<setting name="console_application" value="true"/>
+		<precompile name="base_pre" location="$ISE_PRECOMP\base-safe.ecf"/>
+		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
+		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
+		<cluster name="mine-eiffel" location=".\">
+			<file_rule>
+				<exclude>/EIFGENs$</exclude>
+				<exclude>/CVS$</exclude>
+				<exclude>/.svn$</exclude>
+			</file_rule>
+			<cluster name="storage" location="\home\andres\Personal\Desarrollo\mine-eiffel\storage\">
+				<cluster name="definition_files" location="\home\andres\Personal\Desarrollo\mine-eiffel\storage\definition_files\"/>
+				<cluster name="persistent_storage" location="\home\andres\Personal\Desarrollo\mine-eiffel\storage\persistent_storage\"/>
+			</cluster>
+			<cluster name="tests" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\">
+				<cluster name="test_storage" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\test_storage\">
+					<cluster name="test_definition_files" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\test_storage\test_definition_files\"/>
+					<cluster name="test_persistent_storage" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\test_storage\test_persistent_storage\"/>
+				</cluster>
+				<cluster name="test_world" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\test_world\">
+					<cluster name="test_place" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\test_world\test_place\"/>
+				</cluster>
+			</cluster>
+			<cluster name="world" location="\home\andres\Personal\Desarrollo\mine-eiffel\world\">
+				<cluster name="common" location="\home\andres\Personal\Desarrollo\mine-eiffel\world\common\"/>
+				<cluster name="place" location="\home\andres\Personal\Desarrollo\mine-eiffel\world\place\"/>
+			</cluster>
+		</cluster>
+	</target>
+</system>
