@@ -1,0 +1,6 @@
+*.swp
+*.swo
+*~
+.~lock.*
+EIFGENs/*
+data/world_storage/*
