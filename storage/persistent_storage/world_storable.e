@@ -12,5 +12,6 @@ inherit
 
 feature
     slug: NON_EMPTY_STRING
+    		-- Some string that univocally identifies one object in the storage.
 
 end

@@ -17,13 +17,11 @@ feature -- Test routines
 		note
 			testing: "covers/{DEFINITION_FILE}.retrieve_from_def"
 		local
-			place: PLACE
 			registry: DEFINITION_FILE_REGISTRY
 			definition_file: DEFINITION_FILE
 		do
-			create registry
 			definition_file := registry.get_definition_file_for("PLACE")
-			if attached {PLACE} definition_file.retrieve_from_def ("test_area-test_place") as retrieved_place then
+			if attached {PLACE} definition_file.create_object_from_def ("test_area-test_place") as retrieved_place then
 			    assert ("correctly retrieved", equal (retrieved_place.slug.to_string, "test_area-test_place"))
 			else
 				assert ("retrieve error, message: " + definition_file.last_error_message, False)
@@ -37,9 +35,8 @@ feature -- Test routines
 			registry: DEFINITION_FILE_REGISTRY
 			definition_file: DEFINITION_FILE
 		do
-			create registry
 			definition_file := registry.get_definition_file_for("PLACE")
-			if attached {PLACE} definition_file.retrieve_from_def ("dummy_area-dummy_place") as retrieved_place then
+			if attached {PLACE} definition_file.create_object_from_def ("dummy_area-dummy_place") as retrieved_place then
 				assert ("This should not occur, the slug does not exist", False)
 			end
 		end

@@ -57,10 +57,9 @@ feature -- Attributes
 
 feature {NONE} -- Initialization
 
-	make
-			-- Initialization for `Current'.
+	make (s: NON_EMPTY_STRING)
 		do
-			slug := "x"
+			slug := s
 			author := "x"
 			area_name := "x"
 			place_name := "x"

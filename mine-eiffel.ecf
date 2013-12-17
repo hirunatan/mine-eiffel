@@ -16,7 +16,9 @@
 				<exclude>/.svn$</exclude>
 			</file_rule>
 			<cluster name="storage" location="\home\andres\Personal\Desarrollo\mine-eiffel\storage\">
-				<cluster name="definition_files" location="\home\andres\Personal\Desarrollo\mine-eiffel\storage\definition_files\"/>
+				<cluster name="definition_files" location="\home\andres\Personal\Desarrollo\mine-eiffel\storage\definition_files\">
+					<cluster name="world_definition_files" location="\home\andres\Personal\Desarrollo\mine-eiffel\storage\definition_files\world_definition_files\"/>
+				</cluster>
 				<cluster name="persistent_storage" location="\home\andres\Personal\Desarrollo\mine-eiffel\storage\persistent_storage\"/>
 			</cluster>
 			<cluster name="tests" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\">
