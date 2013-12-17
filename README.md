@@ -5,3 +5,4 @@ Minë ("Mundo Interactivo Narrativo en Español") is a narrative MUD server, wri
 in Python some years ago. Now i'm rewriting it as a concept project to investigate
 about Eiffel language, Design by Contract and OO Principles.
 
+The original project is at http://nongnu.org/ambar/
