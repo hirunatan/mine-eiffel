@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado">
+<id>poblado-posada_piso01</id>
+<nombre>el Primer piso. Habitaciones nobles</nombre>
+
+<descripcion>
+	<item>Te encuentras ante un pasillo con lámparas de aceite en los lados.</item> 
+<item>Ocho habitaciones flanquean el pasillo.</item>
+<item>En los dos extremos del pasillo hay sendas ventanas que dan al exterior. A la calle y al patio. Y sendas escaleras, al norte y al sur, llevan al salon y al segundo piso respectivamente.</item>
+	
+</descripcion>
+
+<salidas>
+<norte id="poblado-posada01">el [salon]</norte>
+<oeste id="poblado-posada_piso01_habitacion01">la habitacion numero [uno]</oeste>
+<este id="poblado-posada_piso01_habitacion02">la habitacion numero [dos]</este>
+<oeste id="poblado-posada_piso01_habitacion03">la habitacion numero [tres]</oeste>
+<este id="poblado-posada_piso01_habitacion04">la habitacion numero [cuatro]</este>
+<oeste id="poblado-posada_piso01_habitacion05">la habitacion numero [cinco]</oeste>
+<este id="poblado-posada_piso01_habitacion06">la habitacion numero [seis]</este>
+<oeste id="poblado-posada_piso01_habitacion07">la habitacion numero [siete]</oeste>
+<este id="poblado-posada_piso01_habitacion08">la habitacion numero [ocho]</este>
+<sur id="poblado-posada_piso02">el [segundo] piso</sur>
+</salidas>
+
+<propiedades volumen='30' luz='40' aura='40' combate="si"
+ocultabilidad='10'/>
+
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+
+
+
+

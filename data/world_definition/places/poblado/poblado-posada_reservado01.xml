@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado-posada">
+
+<id>poblado-posada_reservado01</id>
+<nombre>el Reservado de la posada</nombre>
+
+<descripcion>
+	<item>El cuartito es pequeño y está separado del salón principal por una gruesa cortina. Las paredes están hechas de tablas de madera y se ven huecos en las rendijas. El tamaño del cuarto deja el espacio justo para una mesa redonda y 8 sillas pequeñas. Hasta los hobbits se sentirían agobiados aquí.
+	La iluminación del cuarto es bastante pobre. Apenas un candil de aceite colgando del techo.</item>
+</descripcion> 
+
+<salidas>
+	<sureste id="poblado-posada01">[salon] principal</sureste>
+</salidas>
+
+<propiedades volumen='12' luz='40' aura='45' combate="si"
+ocultabilidad='10'/>
+
+<objetos>
+</objetos>
+
+<encuentros>
+</encuentros>
+
+</sala>

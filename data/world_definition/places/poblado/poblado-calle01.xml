@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-calle01</id>
+<nombre>Final de la Calle del Sur</nombre>
+<descripcion>
+    <item>Te encuentras al final de la calle del Sur, junto a las puertas de entrada al poblado sin nombre. Las casas cercanas son de adobe y paja y no parecen muy resistentes.</item>
+    <item>Desde este lugar te puedes dirigir hacia el norte, en donde se escucha gran bullicio, o hacia el este u oeste, circulando alrededor de la empalizada. Tambien puedes marchar del poblado dirigiendo tus pasos hacia las puertas.</item>
+    <item>La calle está bastante sucia, el suelo está lleno de restos y desperdicios.
+        <personaje_mira>
+	    <requisito base="Sala" comparador="=" nombre="etiqueta" nombre_etiqueta="calle_sucia" valor="si"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <norte id="poblado-calle02">calle bulliciosa
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </norte>
+    <sur id="poblado-puerta01" tipo_cierre="horario" datos_cierre="8-24 poblado-llave_porton01"
+       mensaje_cerrado="Las puertas del poblado están cerradas">puertas
+       <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </sur>
+    <este id="poblado-calle03">junto a la empalizada
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </este>
+    <oeste id="poblado-calle04">junto a la empalizada
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </oeste>
+</salidas>
+<propiedades subtipo='letrina' volumen='40.0' luz='60' aura='50' combate="si" ocultabilidad='10'/>
+<objetos>
+    <objeto id="espada01" cantidad="30">una espada</objeto>
+    <objeto id="poblado-llave_porton01" cantidad="1" maximo="1" probabilidad="80">una llave grande</objeto>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE sala SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Elenya" area="poblado">
+<id>poblado-casa_hall01</id>
+<nombre>Hall de la casa de Elenya</nombre>
+<descripcion>
+  <item>Te encuentras en una pequenya habitacion, con las paredes forradas de paneles de la misma madera roja que la puerta.</item>
+</descripcion>
+
+<salidas>
+  <oeste id="poblado-casa_entrada01">Puerta</oeste>
+  <este id="poblado-casa_cocina01">Cocina</este>
+  <norte id="poblado-casa_pasillo01">Pasillo</norte>
+</salidas>
+<propiedades volumen='6' luz='50' aura='55' combate="si" ocultabilidad='15'/>
+
+<objetos></objetos>
+<encuentros>
+</encuentros>
+</sala>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado">
+<id>poblado-posada_buhardilla01</id>
+<nombre>la buhardilla</nombre>
+
+<descripcion>
+<item>Cuando logras alcanzar el candil, estiras de él y ves que la puerta se abre. Se despliega una escalera y subes con el candil en la mano.</item>
+<item>En esta habitación no hay ventanas. El techo tiene dos vertientes inclinadas a ambos lados pues es ya el último piso. En la parte central puedes andar erguido, pero para observar lo que hay en los rincones te tienes que agachar pues el ángulo del techo es bastante pronunciado</item>
+<item>En esta habitación no hay ventanas, y está todo bastante oscuro. A ambos lados puedes ver hileras de grandes baúles cerrados con candados. Cuando llegas al fondo ves que hay un baúl abierto y dentro puedes ver que hay algunas capas y unas cuantas espadas</item>
+
+<item dificultad='23'>****
+Hay un palo que sale de detrás del baúl abierto. En el extremo observas que un lienzo está enrollado en él. Cuando lo despliegas ves que es la insignia de Gondor. El árbol blanco, las siete piedras y las siete estrellas
+****</item>
+</descripcion>
+
+<salidas>
+<abajo id="poblado-posada_piso02">el [segundo] piso</abajo>
+</salidas>
+
+<propiedades volumen='25' luz='28' aura='44' combate="si"
+ocultabilidad='40'/>
+
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+
+
+
+

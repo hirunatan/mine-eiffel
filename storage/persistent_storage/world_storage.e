@@ -22,6 +22,7 @@ feature -- Access
 			file.close
 		end
 
+	-- TODO: separate command / query
 	get_object_by_slug (type: STRING; slug: NON_EMPTY_STRING): detachable WORLD_STORABLE
 			-- Retrieve an object with all its contents from world storage, if stored.
 			-- If not, try to create the object from a definition file, if exists.

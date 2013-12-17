@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-plaza01</id>
+<nombre>Plaza del Poblado</nombre>
+<descripcion>
+    <item>La Plaza central del poblado, a la que van a dar el resto de las calles, se encuentra relativamente transitada por los mas diversos personajes. En el centro una minuscula fuente deja caer su agua al suelo de arena convirtiendo en un barrizal todo su perímetro. Algunas casas estan construidas con mejores materiales que el resto, en especial las que se dirigen hacia el norte.</item>
+    <item>Al este hay gran bullicio y se pueden escuchar desde aqui los gritos de los vendedores intentando atraer a los viandantes. Por la calle del sur, algo mas oscura, tambien se acierta a vislumbrar movimiento, aunque parece mas subrepticio. Finalmente hacia el oeste se encuentra la calle de las armas.</item>
+    <item>La calle está bastante sucia, el suelo está lleno de restos y desperdicios.
+        <personaje_mira>
+	    <requisito base="Sala" comparador="=" nombre="etiqueta" nombre_etiqueta="calle_sucia" valor="si"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <norte id="poblado-calle05">calle del norte
+	<personaje_cruza>
+	    <guion id="calle_sucia-cruzar"/>
+	    <guion id="zona_pija-cruzar"/>
+	</personaje_cruza>
+    </norte>
+    <sur id="poblado-calle02">calle del sur
+	<personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </sur>
+    <este id="poblado-calle06">calle ruidosa
+	<personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </este>
+    <oeste id="poblado-calle07">casa de las armas
+	<personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </oeste>
+</salidas>
+<propiedades volumen='40.0' luz='60' aura='50' combate="si" ocultabilidad='10'/>
+<objetos>
+</objetos>
+<encuentros>
+    <encuentro id="guardia01" probabilidad="100" cantidad="1" maximo="1">un guardia</encuentro>
+</encuentros>
+</sala>

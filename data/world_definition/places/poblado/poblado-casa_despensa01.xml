@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Elenya" area="poblado">
+<id>poblado-casa_despensa01</id>
+<nombre>Despensa de la casa de Elenya</nombre>
+<descripcion>
+  <item>Numerosos estantes recubren las paredes de la pequena despensa.</item>
+</descripcion>
+
+<salidas>
+    <sur id="poblado-casa_cocina01">Cocina</sur>
+</salidas>
+<propiedades volumen='5' luz='30' aura='55' combate="si" ocultabilidad='20'/>
+
+<objetos></objetos>
+<encuentros></encuentros>
+
+</sala>

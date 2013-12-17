@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado">
+<id>poblado-prision03</id>
+<nombre>Pasillo central</nombre>
+
+<descripcion>
+<item>Aqui termina un largo pasillo pobremente iluminado por antorchas que se encamina hacia el oeste desde esta posicion. Hay dos puertas de metal, una al norte y otra al sur, en las que se han practicado pequenyas ranuras a la altura de los ojos y que parecen dar acceso a un par de celdas.</item>
+<item>La celda del norte esta abierta y parece que hubo alguien encerrado alli hasta hace no mucho.</item>
+</descripcion>
+
+<salidas>
+<norte id="poblado-prision03_celda01">celda</norte>
+<sur id="poblado-prision03_celda02">celda</sur>
+<oeste id="poblado-prision02">pasillo oscuro</oeste>
+</salidas>
+
+<propiedades volumen='20' luz='27' aura='40' combate="si"
+ocultabilidad='20'/>
+
+<objetos></objetos>
+<encuentros></encuentros>
+</sala>
+
+
+

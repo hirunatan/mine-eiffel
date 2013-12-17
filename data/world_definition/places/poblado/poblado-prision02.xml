@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado">
+<id>poblado-prision02</id>
+<nombre>Pasillo central</nombre>
+
+<descripcion>
+<item>Estas en mitad de un sucio y oscuro pasillo de piedra que continua en direccion este y oeste. Dos puertas de metal a ambos lados de la pared dan acceso a lo que deben ser celdas, por lo que imaginas tras haber echado un vistazo a las mismas desde una pequenya ranura que tienen a la altura de los ojos.</item>
+<item>No estas seguro de si hay alguien encerrado en las celdas pues se encuentran casi completamente a oscuras.</item>
+</descripcion>
+
+<salidas>
+<norte id="poblado-prision02_celda01">celda</norte>
+<sur id="poblado-prision02_celda02">celda</sur>
+<este id="poblado-prision03">pasillo oscuro</este>
+<oeste id="poblado-prision01">pasillo oscuro</oeste>
+</salidas>
+
+<propiedades volumen='20' luz='27' aura='40' combate="si"
+ocultabilidad='20'/>
+
+<objetos></objetos>
+<encuentros></encuentros>
+</sala>
+
+
+

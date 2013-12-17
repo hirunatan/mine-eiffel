@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE sala SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado">
+<id>poblado-puerta01</id>
+<nombre>Porton de acceso al Poblado</nombre>
+
+<descripcion>
+<item>Dos grandes puertas de recia madera, ahora abiertas, flanquean la única entrada al poblado sin nombre, que se encuentra hacia el norte. Del sur procede un camino polvoriento que se aleja serpenteando hasta donde la vista alcanza.</item>
+</descripcion>
+
+<salidas>
+<norte id="poblado-calle01" tipo_cierre="horario" datos_cierre="9-22 poblado-llave_porton01" mensaje_cerrado="Las puertas del poblado están cerradas">calle</norte>
+<sur id="poblado-camino01">camino polvoriento</sur>
+</salidas>
+
+<propiedades volumen='40' luz='60' aura='50' combate="si" ocultabilidad='10'/>
+
+<objetos>
+    <objeto id="espada01" cantidad="1" probabilidad="0">una espada</objeto>
+    <objeto id="poblado-llave_porton01" cantidad="1" maximo="1" probabilidad="80">una llave grande</objeto>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE sala SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado-posada">
+
+<id>poblado-posada_cocina01</id>
+
+<nombre>la cocina de la posada</nombre>
+
+<descripcion>
+<item>Una cocina de tamaño mediano, pero que por la gran cantidad de muebles parece más pequeña. El suelo es de tablas de madera. Hay un gran banco de madera pulida que recorre toda la pared de enfrente. En la pared de la derecha está la cocina de leña. Hay una gran mancha de hollín en la pared, justo debajo del tubo que lleva el humo al exterior. A la derecha, en la pared frente al banco, hay una mesa de carnicero. Tiene muchos cortes. Junto a la mesa de carnicero hay una ventana amplia sin cristales ni contraventanas y da justo a la barra del salón.</item>
+<item>Por la pared del norte, colgados encima del banco, hay una hilera de armarios. Algunos están abiertos y puedes ver que contienen cacerolas, pucheros, sartenes y cosas así. Un gran candil está colgado del techo e ilumina sobradamente la habitación.</item>
+
+<item dificultad='5'>En todas las paredes de la cocina se pueden ver manchas de grasa. Sin duda se cocina mucha carne en esta cocina</item>
+
+<item dificultad='15'>En el suelo se puede ver una puerta. No hay estirador para abrirla, pero ves las rendijas</item>
+
+</descripcion>
+
+<salidas>
+<suroeste id="poblado-posada01">el [salon] principal</suroeste>
+<abajo dificultad='15' id="poblado-posada_bodega01">la [bodega]</abajo>
+</salidas>
+
+<propiedades volumen='8' luz='55' aura='55' combate="si" ocultabilidad='11'/>
+
+<objetos>
+    <objeto id="huevo01" cantidad="1" probabilidad="80" maximo="10">un huevo de gallina</objeto>
+    <objeto id="sarten01" cantidad="1" probabilidad="80" maximo="1">una sarten</objeto>
+    <objeto id="cocina01" cantidad="1">una cocina de leña</objeto>
+</objetos>
+
+<encuentros>
+</encuentros>
+
+</sala>

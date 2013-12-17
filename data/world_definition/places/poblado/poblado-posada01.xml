@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado">
+<id>poblado-posada01</id>
+<nombre>Salon principal de la posada</nombre>
+
+<descripcion>
+    <item>Una sala medianamente grande iluminada suficientemente por una
+	lámpara que cuelga del techo y unos cuantos candiles en las paredes.
+	Hay ventanas en las paredes que dan al patio y a la calle pero estan
+	cerradas con contraventanas de madera. El fuego arde vivamente en la
+	chimenea. Frente a ella hay un butacon y a sus pies una vieja alfombra.
+	A la derecha estan colocadas tres mesas cuadradas y alargadas
+	flanqueadas por largos bancos y presididas a ambos lados por sendos
+	taburetes. Tambien hay una mesa redonda rodeada de sillas.</item>
+    <item>A la izquierda hay una barra que sirve a la vez de recepcion y de
+	dispensador de bebidas. En la esquina mas alejada de la izquierda se
+	ve un tramo de escaleras. En el rincón mas alejado de la derecha hay
+	un cuartito construido con tablones de madera y separado del salon
+	principal por una cortina que hace las veces de reservado. Al frente
+	se ve la puerta que da al patio trasero y junto a la barra la puerta
+	a las cocinas.</item>
+    <item dificultad='18'>Frente a la chimenea la alfombra del suelo tiene
+	una arruga. Debajo se ve una trampilla.</item>
+</descripcion>
+
+<salidas>
+<norte id="poblado-posada_patio01">un [patio]</norte>
+<noreste id="poblado-posada_piso01">el [primer] piso</noreste>
+<noroeste id="poblado-posada_reservado01">un [reservado]</noroeste>
+<sureste id="poblado-posada_cocina01">la [cocina]</sureste>
+<oeste id="poblado-calle02">la calle</oeste>
+<abajo dificultad='18' id="poblado-posada_bodega01">la [bodega]</abajo>
+</salidas>
+
+<propiedades volumen='30' luz='45' aura='50' combate="si"
+ocultabilidad='20'/>
+
+<objetos>
+    <objeto id="brandy01" probabilidad="20" maximo="4">una botella de [brandy]</objeto>
+    <objeto id="cerveza01" probabilidad="40" maximo="10">una jarra de [cerveza]</objeto>
+    <objeto id="cerveza02" probabilidad="10" maximo="3">un barril de [cerveza]</objeto>
+    <objeto id="garrafa_agua01" probabilidad="40" maximo="6">una garrafa de [agua]</objeto>
+    <objeto id="licor01" probabilidad="20" maximo="3">una botella de [licor]</objeto>
+    <objeto id="vino01" probabilidad="40" maximo="9">una botella de [vino]</objeto>
+    <objeto id="sidra01" probabilidad="30" maximo="7">una botella de [sidra]</objeto>
+    <objeto id="pan01" probabilidad="80" maximo="10">un trozo de [pan]</objeto>
+</objetos>
+
+<encuentros>
+<encuentro id="posadero" probabilidad="0" cantidad="1" dificultad="3">Posadero</encuentro>
+</encuentros>
+
+</sala>
+
+
+
+
+

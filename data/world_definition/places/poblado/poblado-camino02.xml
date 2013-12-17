@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE sala SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hizgael" area="poblado">
+<id>poblado-camino02</id>
+<nombre>Bordeando la Empalizada</nombre>
+
+<descripcion>
+<item>Una pequeña senda rodea la empalizada del poblado. La maleza crece por todas partes.</item>
+<item dificultad='10'>Hay una pequeña grieta en la empalizada semioculta entre matorrales. Una persona no muy gruesa podría pasar.</item>
+</descripcion>
+
+<salidas>
+<este id="poblado-camino01">puertas de la ciudad</este>
+<oeste id="poblado-camino03">senda entre matorrales</oeste>
+<norte id="poblado-calle04" dificultad='10'>grieta</norte>
+</salidas>
+
+<propiedades volumen='40' luz='55' aura='45' combate="si"
+ocultabilidad='40'/>
+
+<objetos></objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+
+

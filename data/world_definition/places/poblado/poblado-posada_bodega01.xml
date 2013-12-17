@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado-posada">
+
+<id>poblado-posada_bodega01</id>
+
+<nombre>la bodega de suministros</nombre>
+
+<descripcion>
+<item>Ves un hueco del tamaño de una mano en la puerta. Estiras y la abres. Ves una escalera que baja unos 10 peldaños. Abajo está muy oscuro. Sólo la luz que viene de la puerta abierta te permite entrever cómo es la bodega. Un cuarto de dos pasos de ancho y cuatro de largo, con un fortísimo olor a embutidos. Puedes ver a medias las ristras de longanizas, chorizos y demás embutidos que cuelgan del techo. También ves unos cuantos jamones que están junto a la pared del norte. El ambiente del cuerto es seco, propio de un secadero. El suelo está recubiero de paja limpia y seca para secar más el ambiente. Puedes ver que en la pared del sur hay una estantería que llega hasta el techo. En ella ves tarros de especias, pequeños sacos de harina, sal y azucar, sacos de arroz, bandejas de pollo frío, y también adviertes algunos libros.</item>
+
+<item>Las salidas se encuentran al este y al oeste. Sendas escaleras que llevan a una puerta y a la trampilla de la cocina respectivamente</item>
+</descripcion>
+
+<salidas>
+<arriba id="poblado-posada_cocina01">la [cocina]</arriba>
+<arriba id="poblado-posada_patio01">el [patio]</arriba>
+</salidas>
+
+<propiedades volumen='5' luz='7' aura='50' combate="si" ocultabilidad='40'/>
+
+<objetos></objetos>
+
+<encuentros></encuentros>
+
+</sala>

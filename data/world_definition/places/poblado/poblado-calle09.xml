@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-calle09</id>
+<nombre>Parte este de la Empalizada</nombre>
+<descripcion>
+    <item>Este es el punto mas oriental de la empalizada, justo al pie de las primeras colinas que hacen de avanzadilla a las impresionantes Montanyas Nubladas. En la parte superior de la empalizada puedes ver una pequenya construccion, parecida a un puesto de vigilancia, aunque no encuentras ningun modo de acceder. Desde aquí puedes dirigirte al norte o al sur siguiendo el camino que bordea el poblado y que en ambos casos gira poco a poco hacia el oeste, o bien encaminarte por la calle de los comerciantes desde la que te llega el sonido de altas voces.</item>
+    <item>La calle está bastante sucia, el suelo está lleno de restos y desperdicios.
+        <personaje_mira>
+	    <requisito base="Sala" comparador="=" nombre="etiqueta" nombre_etiqueta="calle_sucia" valor="si"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <norte id="poblado-calle12">empalizada por el norte
+        <personaje_cruza>
+	    <guion id="calle_sucia-cruzar"/>
+	    <guion id="zona_pija-cruzar"/>
+	</personaje_cruza>
+    </norte>
+    <sur id="poblado-calle03">empalizada por el sur
+	<personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </sur>
+    <oeste id="poblado-calle06">calle de los comerciantes
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+     </oeste>
+</salidas>
+<propiedades volumen='40.0' luz='55' aura='45' combate="si" ocultabilidad='15'/>
+<objetos>
+</objetos>
+<encuentros>
+    <encuentro id="guardia01" probabilidad="100">un guardia</encuentro>
+</encuentros>
+</sala>

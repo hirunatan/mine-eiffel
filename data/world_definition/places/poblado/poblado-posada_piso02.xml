@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado">
+<id>poblado-posada_piso02</id>
+<nombre>el segundo piso. Habitaciones comunes</nombre>
+
+<descripcion>
+<item>El segundo piso es un gran espacio sin paredes por medio. Tan sólo hay columnas para sujetar el techo.</item>
+
+<item>Hay tres filas de camastros dispuestos en paralelo unos con otros. Las dos filas laterales están junto a las paredes. La tercera fila está en el centro de la habitación. Cada fila cuenta con seis camas</item>
+
+<item>Hay tres ventanas en cada pared, una cada dos camas. En las paredes norte y sur hay dos más que dan a las calles que rodean la posada.</item>
+
+<item dificultad='20'>Hay una puerta en el techo. Está en el rincón mas alejado de la escalera. Se intenta disimular con un candil, pero puedes ver las rendijas aun a contraluz</item> 
+</descripcion>
+
+<salidas>
+<sur id="poblado-posada_piso01">el [primer] piso</sur>
+<arriba id="poblado-posada_buhardilla01" dificultad='20'>una [buhardilla]</arriba>
+</salidas>
+
+<propiedades volumen='40' luz='50' aura='45' combate="si"
+ocultabilidad='15'/>
+
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+
+
+
+

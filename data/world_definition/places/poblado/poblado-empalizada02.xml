@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE sala SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado">
+<id>poblado-empalizada02</id>
+<nombre>Atalaya Este</nombre>
+
+<descripcion>
+<item>En este punto de la empalizada se abre otra pequenya atalaya de madera que vigila el valle ondulado formado entre el poblado y las Montanyas Nubladas. El poblado entiendes ahora que se encuentra ubicado en el limite con un imponente barranco que en este punto casi se une a la empalizada. Tambien aqui hay un taburete sujeto al suelo.</item>
+<item>Este es el lugar del que es mas improbable esperar un ataque y por ello se encuentra mucho menos frecuentado.</item>
+<item>Si giras tu vista hacia el pueblo ves la calle de los comerciantes, atestada de gente enzarzados en sus tratos cotidianos. Puedes seguir caminando por el borde de la empalizada en direccion norte o sur.</item>
+</descripcion>
+
+<salidas>
+<norte id="poblado-empalizada01">por la empalizada</norte>
+<sur id="poblado-empalizada04">por la empalizada</sur>
+</salidas>
+
+<propiedades volumen='40' luz='60' aura='50' combate="si"
+ocultabilidad='10'/>
+
+<objetos></objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-calle14</id>
+<nombre>Parte Norte de la Empalizada</nombre>
+<descripcion>
+    <item>En este punto, justo al norte de las puertas de entrada al poblado sin nombre, se junta el camino que bordea el lugar con el final de una calle adoquinada, la unica que has visto hasta ahora. A tu lado una escala de la misma madera que la empalizada permite acceder a una especie de atalaya o puesto de vigilancia que domina las extensiones al norte del poblado.</item>
+    <item>La calle está bastante sucia, el suelo está lleno de restos y desperdicios.
+        <personaje_mira>
+	    <requisito base="Sala" comparador="=" nombre="etiqueta" nombre_etiqueta="calle_sucia" valor="si"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <sur id="poblado-calle05">calle adoquinada
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </sur>
+    <este id="poblado-calle12">junto a la empalizada
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </este>
+    <oeste id="poblado-calle13">junto a la empalizada
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </oeste>
+    <arriba id="poblado-empalizada01">puesto de vigilancia norte
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </arriba>
+</salidas>
+<propiedades volumen='40.0' luz='55' aura='45' combate="si" ocultabilidad='15'/>
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>

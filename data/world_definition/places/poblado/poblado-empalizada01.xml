@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE sala SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado">
+<id>poblado-empalizada01</id>
+<nombre>Atalaya Norte</nombre>
+
+<descripcion>
+<item>Esta atalaya de madera proporciona una excelente vista de los alrededores y un lugar seguro desde el que defender el poblado contra enemigos. Un pequenyo taburete de madera, muy desgastado por el uso y sujeto al suelo, permite descansar a los ocasionales vigias.</item>
+<item>Si diriges tu mirada al sur se muestra ante ti buena parte de la mitad norte del poblado, entre cuyas construcciones destacan una mansion en el lateral de la calle nueva y un extranyo edificio atiborrado de abigarradas estatuas y gargolas en su techo, mas bien al sureste de tu posicion.</item>
+<item>Ademas de poder bajar por las escaleras de acceso que ya subiste puedes continuar por el borde de la empalizada tanto hacia el este como hacia el oeste. Sin embargo, si caminas hacia el norte, por el aire, en lugar de caerte irás a parar a un agujero hobbit (cosas de este poblado, ya ves).</item>
+</descripcion>
+
+<salidas>
+<este id="poblado-empalizada02">por la empalizada</este>
+<oeste id="poblado-empalizada03">por la empalizada</oeste>
+<abajo id="poblado-calle14">Final de la calle nueva</abajo>
+<norte id="Retama-entrada01">el agujero hobbit de la familia Retama</norte>
+</salidas>
+
+<propiedades volumen='40' luz='60' aura='50' combate="si" ocultabilidad='10'/>
+
+<objetos></objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+
+

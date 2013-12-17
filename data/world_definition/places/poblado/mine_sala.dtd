@@ -1,0 +1,145 @@
+<!ELEMENT sala (id,nombre,descripcion,salidas,propiedades,objetos?,encuentros?)>
+        <!ATTLIST sala 
+                version CDATA #REQUIRED 
+                autor  CDATA #REQUIRED 
+                area CDATA #REQUIRED 
+                comentario CDATA #IMPLIED>
+
+        <!ELEMENT id (#PCDATA)>
+
+        <!ELEMENT nombre (#PCDATA)>
+
+        <!ELEMENT descripcion (item+)>
+                <!ELEMENT item (#PCDATA)>
+                        <!ATTLIST item 
+                               dificultad CDATA #IMPLIED>
+
+        <!ELEMENT salidas (oeste*,este*,norte*,sur*,noroeste*,noreste*,suroeste*,sureste*,arriba*,abajo*,otro*)>
+
+                <!ELEMENT oeste (#PCDATA)>
+                        <!ATTLIST oeste 
+                                id CDATA #REQUIRED 
+                                dificultad CDATA #IMPLIED 
+                                 tipo_cierre CDATA #IMPLIED 
+                                 estado CDATA #IMPLIED 
+                                 datos_cierre CDATA #IMPLIED
+                                 mensaje_cerrado CDATA #IMPLIED>
+                       
+                <!ELEMENT este (#PCDATA)>
+                        <!ATTLIST este 
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT norte (#PCDATA)>
+                        <!ATTLIST norte
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT sur (#PCDATA)>
+                        <!ATTLIST sur
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT noroeste (#PCDATA)>
+                        <!ATTLIST noroeste
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT noreste (#PCDATA)>
+                        <!ATTLIST noreste
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT suroeste (#PCDATA)>
+                        <!ATTLIST suroeste
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT sureste (#PCDATA)>
+                        <!ATTLIST sureste 
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT arriba (#PCDATA)>
+                        <!ATTLIST arriba
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT abajo (#PCDATA)>
+                        <!ATTLIST abajo
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT otro (#PCDATA)>
+                        <!ATTLIST otro
+                                  id CDATA #REQUIRED 
+                                  dificultad CDATA #IMPLIED 
+                                  tipo_cierre CDATA #IMPLIED 
+                                  estado CDATA #IMPLIED 
+                                  datos_cierre CDATA #IMPLIED
+                                  mensaje_cerrado CDATA #IMPLIED>
+
+                <!ELEMENT propiedades (#PCDATA)>
+                        <!ATTLIST propiedades 
+                                volumen CDATA #REQUIRED
+                                luz CDATA #REQUIRED
+                                ocultabilidad CDATA #REQUIRED
+                                tipo CDATA #IMPLIED
+                                aura CDATA #IMPLIED
+                                combate CDATA #IMPLIED
+                                subtipo CDATA #IMPLIED>
+
+        <!ELEMENT objetos (objeto*)>
+                <!ELEMENT objeto (#PCDATA)>
+                        <!ATTLIST objeto 
+                                id CDATA #REQUIRED 
+                                cantidad CDATA #REQUIRED
+                                maximo CDATA #IMPLIED
+                                probabilidad CDATA #IMPLIED
+                                dificultad CDATA #IMPLIED>
+        
+        <!ELEMENT encuentros (encuentro*)>
+                <!ELEMENT encuentro (#PCDATA)>
+                        <!ATTLIST encuentro 
+                        id CDATA #REQUIRED
+                        cantidad CDATA #REQUIRED
+                        maximo CDATA #IMPLIED
+                        probabilidad CDATA #IMPLIED
+                        dificultad CDATA #IMPLIED>
+

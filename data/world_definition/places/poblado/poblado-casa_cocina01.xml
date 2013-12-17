@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Elenya" area="poblado">
+<id>poblado-casa_cocina01</id>
+<nombre>Cocina de la casa de Elenya</nombre>
+<descripcion>
+  <item>Te encuentras en una espaciosa cocina. La luz entra a traves de sus numerosos ventanales, apenas filtrandose por las cortinillas. Bancadas, fogones, utensilios... casi parece mas la cocina de un hobbit que de una elfa.</item>
+</descripcion>
+
+<salidas>
+  <oeste id="poblado-casa_hall01">Hall</oeste>
+  <norte dificultad ='20' id="poblado-casa_despensa01">Rincón oscuro</norte>
+</salidas>
+
+<propiedades volumen='10' luz='50' aura='55' combate="si" ocultabilidad='25'/>
+
+<objetos></objetos>
+<encuentros></encuentros>
+
+
+</sala>

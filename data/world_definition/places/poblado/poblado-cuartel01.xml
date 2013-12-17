@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-cuartel01</id>
+<nombre>Entrada al Cuartel</nombre>
+<descripcion>
+    <item>Estas en una pequenya sala limpia y vacia de muebles. De cuando en cuando pasa algun guardia, a veces con alguien fuertemente sujeto, y traspasan puerta que hay hacia el sur. Otra puerta, mucho mas grande, conduce fuera del edificio, a la calle.</item>
+</descripcion>
+<salidas>
+    <sur id="poblado-cuartel02">interior del cuartel</sur>
+    <oeste id="poblado-calle08">calle</oeste>
+</salidas>
+<propiedades volumen='15.0' luz='30' aura='55' combate="si" ocultabilidad='5'/>
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>

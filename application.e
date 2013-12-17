@@ -17,9 +17,13 @@ feature {NONE} -- Initialization
 
 	make
 			-- Run application.
+		local
+			storage: WORLD_STORAGE
 		do
-				--| Add your code here
-			print ("Hello Eiffel World!%N")
+			create storage
+			if attached {PLACE} storage.get_object_by_slug ("PLACE", "poblado-calle01") as retrieved_place then
+				print ("funsiona")
+			end
 		end
 
 end

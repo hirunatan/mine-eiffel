@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+
+<sala version="1.2" autor="Hirunatan" area="poblado">
+
+<id>poblado-pozo01</id>
+<nombre>Un oscuro y estrecho pozo</nombre>
+
+<descripcion>
+<item>Estas en un agujero no muy hondo, pero oscuro, estrecho y sobre todo bastante húmedo. Hay poco espacio para moverse. Parece que esto fue antiguamente un pozo para conseguir agua, pero esta abandonado y huele que apesta.</item>
+</descripcion>
+
+<salidas>
+<arriba id="poblado-camino01">[salir] del pozo</arriba>
+</salidas>
+
+<propiedades volumen='3' luz='30' aura='40' combate="si" ocultabilidad='10'/>
+
+<objetos></objetos>
+<encuentros></encuentros>
+
+</sala>
+
+
+

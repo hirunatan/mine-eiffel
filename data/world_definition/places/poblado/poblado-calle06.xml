@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-calle06</id>
+<nombre>Calle de los Comerciantes</nombre>
+<descripcion>
+    <item>Has llegado a la zona donde se concentra el comercio del poblado. Hombres y mujeres gritan desde los bajos de sus casas las mercancias a la venta, mientras los curiosos se acercan a los puestos para comprar o trocar. El olor reinante te hace desconfiar de los alimentos que se exhiben por casi toda la calle. Al norte hay una tienda que no despide olor a comida y de la que has visto salir a un par de extranjeros con mochilas a su espalda. Hacia el sur se dirige la calle de la guardia. Al este la calle se topa finalmente con la empalizada que rodea el pueblo, mientras que al oeste se llega a una amplia plaza.</item>
+    <item>Al principio de la calle, a la derecha, se puede ver un gran porton de dos hojas que esta cerrado. Es tan grande que pueden pasar carros por el</item>
+    <item>La calle está bastante sucia, el suelo está lleno de restos y desperdicios.
+        <personaje_mira>
+	    <requisito base="Sala" comparador="=" nombre="etiqueta" nombre_etiqueta="calle_sucia" valor="si"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <norte id="poblado-general01">tienda
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </norte>
+    <sur id="poblado-calle08">calle de la guardia
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </sur>
+    <este id="poblado-calle09">empalizada
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </este>
+    <oeste id="poblado-plaza01">plaza
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </oeste>
+    <suroeste id="poblado-posada_patio01">porton al patio de la posada
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </suroeste>
+</salidas>
+<propiedades volumen='40.0' luz='50' aura='45' combate="si" ocultabilidad='20'/>
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>

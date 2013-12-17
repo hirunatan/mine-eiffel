@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Elenya" area="poblado">
+<id>poblado-casa_entrada01</id>
+<nombre>La entrada a casa de Elenya</nombre>
+<descripcion>
+  <item>Una puerta de madera roja te da la bienvenida a casa de Elenya, la elfa.</item>
+</descripcion>
+
+<salidas>
+  <este id="poblado-casa_hall01">Hall</este>
+  <suroeste id="poblado-calle11">Una calle del poblado</suroeste>
+</salidas>
+
+<propiedades volumen='15' luz='50' aura='50' combate="si" ocultabilidad='10'/>
+
+<objetos></objetos>
+<encuentros></encuentros>
+</sala>

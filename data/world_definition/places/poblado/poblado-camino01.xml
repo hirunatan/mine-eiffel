@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-camino01</id>
+<nombre>el camino al Poblado sin nombre</nombre>
+<descripcion>
+    <item>Tus pasos te dirigen, a través de un camino polvoriento y poco transitado, hacia un pequeño poblado rodeado por una empalizada de madera. Hacia el este puedes vislumbrar las estribaciones de las imponentes Montañas Nubladas.</item>
+    <item>Parece que hay movimiento junto al portalón de entrada al poblado.
+        <personaje_mira>
+	    <requisito comparador="mayor" dificultad="15" id_tirada="percepcion_sala" nombre="resultado_tirada" base="Personaje" valor="1"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <norte id="poblado-puerta01">entrada al poblado</norte>
+    <oeste id="poblado-camino02">senda polvorienta</oeste>
+    <abajo id="poblado-pozo01">un oscuro y estrecho [pozo]</abajo>
+</salidas>
+<propiedades volumen='60.0' luz='70' aura='50' combate="si" ocultabilidad='10'/>
+<objetos>
+    <objeto id="pocion01" probabilidad="20">Una rara [botellita]</objeto>
+    <objeto id="tomillo01" probabilidad="20">Unas ramitas que huelen muy bien</objeto>
+</objetos>
+<encuentros>
+    <encuentro id="tutora" probabilidad="100">La Tutora</encuentro>
+</encuentros>
+</sala>

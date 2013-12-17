@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE sala SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado">
+<id>poblado-prision02_celda01</id>
+<nombre>Celda</nombre>
+
+<descripcion>
+<item>Estas en una celda de la prision del poblado. A tu alrededor se extiende la oscuridad que no consigue alumbrar el minusculo resquicio de luz procedente del pasillo. Tampoco hay mucho que ver pues entre las cuatro paredes de dura piedra no hay objeto alguno, ni tan siquiera un jergon de paja o un taburete que sirva para descansar sin sentarse en el frio suelo. Se trata de un lugar tetrico y deprimente.</item>
+<item>La única salida aparente es la puerta de metal que queda al sur.</item>
+</descripcion>
+
+<salidas>
+<sur id="poblado-prision02">pasillo oscuro</sur>
+</salidas>
+
+<propiedades volumen='05' luz='10' aura='38' combate="si"
+ocultabilidad='30'/>
+
+<objetos></objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+
+

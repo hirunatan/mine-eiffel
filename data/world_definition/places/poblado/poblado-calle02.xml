@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-calle02</id>
+<nombre>Calle del Sur</nombre>
+<descripcion>
+    <item>Estas en la mitad de la calle del Sur. Las construcciones que te rodean no difieren mucho de las que viste al entrar en el poblado, aunque el lugar parece mucho mas transitado. Personajes furtivos entran y salen constantemente de una casa al oeste cuya entrada entreabierta se encuentra regada de inmundicias. Al este otra casa, algo más grande, ostenta un inmenso cartel en su pared con un dibujo casi irreconocible y la leyenda: Posada del Borracho.</item>
+    <item>La calle está bastante sucia, el suelo está lleno de restos y desperdicios.
+        <personaje_mira>
+	    <requisito base="Sala" comparador="=" nombre="etiqueta" nombre_etiqueta="calle_sucia" valor="si"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <norte id="poblado-plaza01">plaza central
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </norte>
+    <sur id="poblado-calle01">continuación de la calle
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </sur>
+    <este id="poblado-posada01">Posada del Borracho
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </este>
+    <oeste id="poblado-taberna01">casa concurrida
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </oeste>
+</salidas>
+<propiedades volumen='40.0' luz='50' aura='45' combate="si" ocultabilidad='15'/>
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>

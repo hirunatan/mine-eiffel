@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado">
+<id>poblado-posada_patio01</id>
+<nombre>Patio trasero y cuadra de la posada</nombre>
+
+<descripcion>
+	<item> Un gran patio se abre en la parte trasera de la posada. A la derecha se pueden ver un cobertizo pequeño en el que se cobijan unos toneles que tienen pintada una marca en rojo que reza "Hinuden 2002". Parecen ser de cerveza.</item>
+<item>Un poco mas adelante, en el mismo lado, se pueden apreciar unas largas palanganas y una fuente. Se ven unas cuantas piedras de lavado.</item>
+
+<item> A la izquierda hay un gran cobertizo con una pared hasta la altura de un hobit. Una puerta permite el acceso y dentro se pueden ver pequeñas habitaciones con paja y alfalfa. Hay bebederos y comederos para los caballos que se hospeden alli.</item>
+
+<item dificultad='15'> Siguiendo la pared en la que esta la puerta al salon principal, hay una pequeña puerta justo en la esquina.</item>
+
+<item> Entre el cobertizo y el labadero, hay una puerta grande de dos ojas por la que seguramente entran los carros y los caballos de los huespedes</item>
+</descripcion>
+
+<salidas>
+<norte id="poblado-calle06">[porton]</norte>
+<noroeste id="poblado-posada_bodega01">[puertecita]</noroeste>
+<oeste id="poblado-posada01">[salon]</oeste>
+</salidas>
+
+<propiedades volumen='50' luz='45' aura='50' combate="si"
+ocultabilidad='30'/>
+
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>
+
+
+
+
+

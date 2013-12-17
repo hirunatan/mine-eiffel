@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Hinuden" area="poblado">
+<id>poblado-posada_piso01_habitacion08</id>
+<nombre>la habitación número ocho</nombre>
+
+<descripcion>
+<item>La habitación, como las demás, está iluminada y aireada por una ventana de guillotina, es relativamente amplia. Una cama junto a la ventana y una pequeña mesa en el rincon izquierdo. A la derecha de la puerta hay una mesa redonda con cuatro sillas a su alrededor, aun así hay algun espacio para andar. En el rincón de la derecha hay una mesa con una palangana y una jarra. Colgando de la pared, un espejo cuadrado y de tamaño justo para verse sólo la cara.</item>
+
+<item>Encima de la mesa grande y de la pequeña junto a la cama, hay sendos candiles de aceite para iluminar por la noche.</item>
+
+<item>Junto a la mesa para lavarse hay una cajonera amplia que comprende cuatro cajones para ropa</item>
+
+</descripcion>
+
+<salidas>
+<oeste id="poblado-posada_piso01">al [pasillo]</oeste>
+</salidas>
+
+<propiedades volumen='10' luz='40' aura='45' combate="si"
+ocultabilidad='12'/>
+
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>

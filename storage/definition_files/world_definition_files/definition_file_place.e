@@ -11,13 +11,31 @@ inherit
 
 	DEFINITION_FILE
 		redefine
-			create_object_from_def
+			Definition_file_subdir, create_object_from_def
 		end
 
-feature
+feature -- Redefinitions
+
+	Definition_file_subdir: STRING = "places/"
 
 	create_object_from_def (slug: NON_EMPTY_STRING): detachable PLACE
+		local
+		    xml_element: XML_ELEMENT
 		do
+			read_xml_file(slug)
+			if attached xml_root_element as root then
+    			xml_element := root
+    			from
+    				xml_element.start
+    			until
+    				xml_element.after
+    			loop
+    				if attached {XML_ELEMENT} xml_element.item_for_iteration as xml_subelement then
+    				    print (xml_subelement.name + "%N")
+    				end
+    				xml_element.forth
+    			end
+			end
 			if slug.to_string.starts_with ("test") then
 				create Result.make(slug)
 			else

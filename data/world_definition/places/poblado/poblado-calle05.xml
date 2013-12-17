@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-calle05</id>
+<nombre>Calle Nueva</nombre>
+<descripcion>
+    <item>Hasta ahora todas las calles que has visitado en este poblado eran de arena presionada por el paso de los habitantes, pero en este lugar el suelo esta adoquinado y extranyamente limpio. Tambien se nota una mejora evidente en los edificios que te rodean, de ladrillo y otros materiales, en ocasiones pintados de blanco o azul. Se trata, imaginas, de la zona en la que viven los personajes mas acaudalados. Una de estas casas, practicamente una mansion, atrae tu atencion por su riqueza de ornamentos y las fuertes verjas custodiadas que separan su jardincillo de la calle. Otra casa en el lado contrario ostenta, sobre su puerta entornada, un bonito letrero de madera con una redoma dibujada. Al sur queda la plaza central mientras que al norte puedes ver el final de la calle que da a la empalizada.</item>
+    <item>La calle está bastante sucia, el suelo está lleno de restos y desperdicios.
+        <personaje_mira>
+	    <requisito base="Sala" comparador="=" nombre="etiqueta" nombre_etiqueta="calle_sucia" valor="si"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <norte id="poblado-calle14">final de la calle norte
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </norte>
+    <sur id="poblado-plaza01">plaza central
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </sur>
+    <este id="poblado-tienda01">tienda de pociones
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </este>
+    <oeste id="poblado-mansion01">mansion
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </oeste>
+</salidas>
+<propiedades volumen='40.0' luz='50' aura='45' combate="si" ocultabilidad='15'/>
+<objetos>
+</objetos>
+<encuentros>
+</encuentros>
+</sala>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-calle11</id>
+<nombre>Parte oeste de la Empalizada</nombre>
+<descripcion>
+    <item>Llegas al punto mas occidental de la empalizada. Al fijarte en esta descubres que en su parte superior se ha construido una especie de puesto de vigilancia, aunque no encuentras ningun modo de acceder a el. Desde aqui puedes dirigirte al norte o al sur siguiendo el camino que bordea el poblado y que en ambos casos gira poco a poco hacia el este, o bien encaminarte hacia el este por la calle de las armas.</item>
+    <item>Al noreste se encuentra una vivienda curiosa, muy diferente a las del resto del poblado, decorada de manera elfica y primorosamente conservada.</item>
+    <item>La calle está bastante sucia, el suelo está lleno de restos y desperdicios.
+        <personaje_mira>
+	    <requisito base="Sala" comparador="=" nombre="etiqueta" nombre_etiqueta="calle_sucia" valor="si"/>
+	</personaje_mira>
+    </item>
+</descripcion>
+<salidas>
+    <norte id="poblado-calle13">empalizada por el norte
+        <personaje_cruza>
+	    <guion id="calle_sucia-cruzar"/>
+	    <guion id="zona_pija-cruzar"/>
+	</personaje_cruza>
+    </norte>
+    <noreste id="poblado-casa_entrada01">Casa de Elenya
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </noreste>
+    <sur id="poblado-calle04">empalizada por el sur
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </sur>
+    <este id="poblado-calle07">calle de los comerciantes
+        <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
+    </este>
+</salidas>
+<propiedades volumen='40.0' luz='55' aura='45' combate="si" ocultabilidad='15'/>
+<objetos>
+</objetos>
+<encuentros>
+    <encuentro id="guardia01" probabilidad="100">un guardia</encuentro>
+</encuentros>
+</sala>

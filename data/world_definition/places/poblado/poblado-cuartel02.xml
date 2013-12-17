@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE saladeMine SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado" comentario="">
+<id>poblado-cuartel02</id>
+<nombre>Interior del Cuartel</nombre>
+<descripcion>
+    <item>Esta habitacion amplia y despejada cuenta como unicos muebles con una especie de mostrador de madera oscura muy desgastada y una silla detras del mismo material. Por lo demas se encuentra vacia. Constantemente pasean por aqui guardias procedentes de todas las direcciones sin prestarte mucha atencion. Algunos permanecen un buen rato tras el mostrador y se hacen cargo de las pertenencias de los presos cuando son traidos por los guardias.</item>
+    <item>Hacia el norte hay una pequenya sala de entrada al lugar, mientras que al este se yergue una fuerte puerta con todos los visos de estar cerrada. Al sur, cerca del mostrador, unas escaleras conducen a un oscuro corredor.</item>
+    <item dificultad='15'>Al cabo de un rato de observar a los guardias te percatas de que a los prisioneros se los llevan por las escaleras del sur.</item>
+</descripcion>
+<salidas>
+    <norte id="poblado-cuartel01">sala de entrada</norte>
+    <este id="poblado-cuartel03">puerta cerrada</este>
+    <abajo id="poblado-prision01">pasillo oscuro</abajo>
+</salidas>
+<propiedades volumen='25.0' luz='30' aura='55' combate="si" ocultabilidad='10'/>
+<objetos>
+</objetos>
+<encuentros>
+    <encuentro id="alguacil01" probabilidad="100" cantidad="1" maximo="1">el alguacil</encuentro>
+</encuentros>
+</sala>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE sala SYSTEM "mine_sala.dtd">
+<sala version="1.2" autor="Mandos" area="poblado">
+<id>poblado-general01</id>
+<nombre>Tienda</nombre>
+
+<descripcion>
+<item>Esta amplia construccion consta de una sola habitacion en la que te encuentras. Tras un vetusto mostrador que divide la estancia en dos se apilan en estantes objetos de todo tipo. La mayoria parecen de segunda mano o inservibles pero hay otros que bien pudieran serte de utilidad.</item>
+</descripcion>
+
+<salidas>
+<sur id="poblado-calle06">calle</sur>
+</salidas>
+
+<propiedades volumen='20' luz='35' aura='50' combate="no" ocultabilidad='10'/>
+
+<objetos></objetos>
+<encuentros>
+</encuentros>
+</sala>
