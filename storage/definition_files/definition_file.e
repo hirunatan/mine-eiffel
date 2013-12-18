@@ -22,7 +22,8 @@ feature -- Access
 feature -- Status
 
 	error_occurred: BOOLEAN
-			-- True if the las call to create_object_from_def generated an error
+			-- True if the last call to create_object_from_def generated an error
+			-- (or if it has not been called yet)
 		do
 			Result := not last_error_message.is_empty
 		end
@@ -40,29 +41,30 @@ feature {DEFINITION_FILE} -- XML parsing
     		-- create an xml_document in memory.
 		local
 			parser: XML_STOPPABLE_PARSER
-			l_file: PLAIN_TEXT_FILE
-			l_tree: XML_CALLBACKS_DOCUMENT
-			l_resolver: XML_NAMESPACE_RESOLVER
+			file: PLAIN_TEXT_FILE
+			tree: XML_CALLBACKS_DOCUMENT
+			resolver: XML_NAMESPACE_RESOLVER
         do
 			create parser.make
-			create l_tree.make_null
-			create l_resolver.set_next (l_tree)
-			parser.set_callbacks (l_resolver)
+			create tree.make_null
+			create resolver.set_next (tree)
+			parser.set_callbacks (resolver)
 
-			create l_file.make_with_name (file_name_for_slug (slug))
-			if l_file.exists and then l_file.is_readable then
-				l_file.open_read
-				if l_file.is_open_read then
-					parser.parse_from_file (l_file)
-					l_file.close
-		    		if not parser.error_occurred and then (attached l_tree.document as l_xml_structure) then
-		    			xml_document := l_xml_structure
-		    		end
+			create file.make_with_name (file_name_for_slug (slug))
+			if file.exists and then file.is_readable then
+				file.open_read
+				parser.parse_from_file (file)
+				file.close
+	    		if not parser.error_occurred and then (attached tree.document as xml_structure) then
+	    			xml_document := xml_structure
 		    	end
 		    end
         end
 
 	xml_root_element: detachable XML_ELEMENT
+			-- The root element of the document read by read_xml_file
+		require
+		    status_ok: not error_occurred
 		do
 			if attached xml_document as doc then
 			    Result := doc.root_element

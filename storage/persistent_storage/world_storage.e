@@ -35,7 +35,7 @@ feature -- Access
 			if file.access_exists then
 
 				-- Retrieve object from storage
-				create file.make_open_read (file_name_for_slug (slug))
+				file.open_read (file_name_for_slug (slug))
 				if attached {WORLD_STORABLE} file.retrieved as o then
 					retrieved_object := o
 					last_error_message := ""
@@ -69,7 +69,8 @@ feature -- Access
 feature -- Status
 
 	error_occurred: BOOLEAN
-			-- True if the las call to retrieve_object_by_slug generated an error
+			-- True if the last call to retrieve_object_by_slug generated an error
+			-- (or if it has not been called yet)
 		do
 			Result := not last_error_message.is_empty
 		end
