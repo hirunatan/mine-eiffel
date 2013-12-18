@@ -35,7 +35,7 @@ feature -- Access
 			if file.access_exists then
 
 				-- Retrieve object from storage
-				file.open_read (file_name_for_slug (slug))
+				file.open_read
 				if attached {WORLD_STORABLE} file.retrieved as o then
 					retrieved_object := o
 					last_error_message := ""

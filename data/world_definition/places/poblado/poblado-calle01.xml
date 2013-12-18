@@ -27,7 +27,7 @@
         <personaje_cruza><guion id="calle_sucia-cruzar"/></personaje_cruza>
     </oeste>
 </salidas>
-<propiedades subtipo='letrina' volumen='40.0' luz='60' aura='50' combate="si" ocultabilidad='10'/>
+<propiedades tipo="Poblacion" subtipo='calle' volumen='40.0' luz='60' aura='50' combate="si" ocultabilidad='10'/>
 <objetos>
     <objeto id="espada01" cantidad="30">una espada</objeto>
     <objeto id="poblado-llave_porton01" cantidad="1" maximo="1" probabilidad="80">una llave grande</objeto>

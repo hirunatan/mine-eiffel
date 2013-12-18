@@ -20,19 +20,29 @@ feature -- Test routines
 		note
 			testing: "covers/{WORLD_STORAGE}.store_place", "covers/{WORLD_STORAGE}.retrieve_object_by_slug", "covers/{WORLD_STORAGE}.retrieved_object"
 		local
-			place: PLACE
 			storage: WORLD_STORAGE
 		do
-			create place.make ("test_area-test_place")
 			create storage
-			storage.store_object ("PLACE", place)
-			storage.retrieve_object_by_slug ("PLACE", place.slug)
+			storage.retrieve_object_by_slug("PLACE", "poblado-calle01") -- This time should create the object from definition
 			if storage.error_occurred then
-				assert ("retrieve error, message: " + storage.last_error_message, False)
+				assert ("create error, message: " + storage.last_error_message, False)
 			else
-    			if attached {PLACE} storage.retrieved_object as retrieved_place then
-    				assert ("correctly retrieved", equal (place.slug.to_string, retrieved_place.slug.to_string))
-    			else
+    			if attached {PLACE} storage.retrieved_object as place then
+    				assert ("correctly retrieved", equal (place.slug.to_string, "poblado-calle01"))
+
+        			storage.store_object ("PLACE", place)
+
+        			storage.retrieve_object_by_slug ("PLACE", place.slug) -- This time should retrieve the object from storage
+        			if storage.error_occurred then
+        				assert ("retrieve error, message: " + storage.last_error_message, False)
+        			else
+            			if attached {PLACE} storage.retrieved_object as other_place then
+            				assert ("correctly retrieved", equal (place.slug.to_string, other_place.slug.to_string))
+            			else
+            			    assert ("object retrieved is not a place", False)
+            			end
+            		end
+            	else
     			    assert ("object retrieved is not a place", False)
     			end
 			end

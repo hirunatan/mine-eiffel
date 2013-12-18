@@ -23,7 +23,18 @@ feature {NONE} -- Initialization
 			create storage
 			storage.retrieve_object_by_slug ("PLACE", "poblado-calle01")
 			if not storage.error_occurred then
-				print ("funsiona")
+    			if attached {PLACE} storage.retrieved_object as place then
+    				print ("%N")
+					print ("Estás en " + place.place_name.to_string + "%N%N")
+					print ("------- Descripción del lugar -------%N%N")
+					across place.description as desc loop
+						print (desc.item.text.to_string + "%N%N")
+					end
+    			    print ("--------------------------------------%N%N")
+    			    across place.exits as exits loop
+    			    	print ("Hacia el " + exits.item.direction.to_string + " ves " + exits.item.description.to_string + "%N")
+    			    end
+				end
 			end
 		end
 

@@ -1,4 +1,4 @@
-	note
+note
 	description: "A room or other type of location inside the game"
 	author: ""
 	date: "$Date$"
@@ -9,12 +9,13 @@ class
 	PLACE
 
 inherit
-    WORLD_STORABLE
-		redefine
-    		slug
- 		end
 
-create
+	WORLD_STORABLE
+		redefine
+			slug
+		end
+
+create {DEFINITION_FILE_PLACE}
 	make
 
 feature -- Attributes
@@ -49,30 +50,28 @@ feature -- Attributes
 	hiding_value: MAGNITUDE_INT_100
 			-- The ease of hiding in this place (0 = impossible; 100 = sure)
 
-	description: ARRAY [PLACE_DESCRIPTION_ITEM]
+	description: LIST [PLACE_DESCRIPTION_ITEM]
 			-- The visible description of the place (composed of items, some of that which not be visible for a character)
 
-	exits: ARRAY [PLACE_EXIT]
+	exits: LIST [PLACE_EXIT]
 			-- The possible exits from this place to other ones
 
 feature {NONE} -- Initialization
 
-	make (s: NON_EMPTY_STRING)
+	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_area_name: NON_EMPTY_STRING; the_place_name: NON_EMPTY_STRING; the_aura: MAGNITUDE_INT_100; the_place_type: NON_EMPTY_STRING; the_place_subtype: NON_EMPTY_STRING; the_capacity: MAGNITUDE_REAL_POSITIVE; the_light: MAGNITUDE_INT_100; the_hiding_value: MAGNITUDE_INT_100; the_description: LIST [PLACE_DESCRIPTION_ITEM]; the_exits: LIST [PLACE_EXIT])
 		do
-			slug := s
-			author := "x"
-			area_name := "x"
-			place_name := "x"
-			aura := 4
-			place_type := "x"
-			place_subtype := "x"
-			capacity := 1
-			light := 50
-			hiding_value := 50
-			description := <<>>
-			exits := <<>>
+			slug := the_slug
+			author := the_author
+			area_name := the_area_name
+			place_name := the_place_name
+			aura := the_aura
+			place_type := the_place_type
+			place_subtype := the_place_subtype
+			capacity := the_capacity
+			light := the_light
+			hiding_value := the_hiding_value
+			description := the_description
+			exits := the_exits
 		end
-
-feature {NONE} -- Implementation
 
 end
