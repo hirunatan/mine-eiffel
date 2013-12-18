@@ -18,7 +18,7 @@ feature -- Test routines
 
 	test_store_and_retrieve_place
 		note
-			testing: "covers/{WORLD_STORAGE}.store_place", "covers/{WORLD_STORAGE}.get_object_by_slug"
+			testing: "covers/{WORLD_STORAGE}.store_place", "covers/{WORLD_STORAGE}.retrieve_object_by_slug", "covers/{WORLD_STORAGE}.retrieved_object"
 		local
 			place: PLACE
 			storage: WORLD_STORAGE
@@ -26,21 +26,27 @@ feature -- Test routines
 			create place.make ("test_area-test_place")
 			create storage
 			storage.store_object ("PLACE", place)
-			if attached {PLACE} storage.get_object_by_slug ("PLACE", place.slug) as retrieved_place then
-				assert ("correctly retrieved", equal (place.slug.to_string, retrieved_place.slug.to_string))
-			else
+			storage.retrieve_object_by_slug ("PLACE", place.slug)
+			if storage.error_occurred then
 				assert ("retrieve error, message: " + storage.last_error_message, False)
+			else
+    			if attached {PLACE} storage.retrieved_object as retrieved_place then
+    				assert ("correctly retrieved", equal (place.slug.to_string, retrieved_place.slug.to_string))
+    			else
+    			    assert ("object retrieved is not a place", False)
+    			end
 			end
 		end
 
 	test_retrieve_unexistent_slug
 		note
-			testing: "covers/{WORLD_STORAGE}.get_object_by_slug"
+			testing: "covers/{WORLD_STORAGE}.retrieve_object_by_slug", "covers/{WORLD_STORAGE}.retrieved_object"
 		local
 			storage: WORLD_STORAGE
 		do
 			create storage
-			if attached {PLACE} storage.get_object_by_slug ("PLACE", "dummy_area-dummy_place") as retrieved_place then
+			storage.retrieve_object_by_slug ("PLACE", "dummy_area-dummy_place")
+			if not storage.error_occurred then
 				assert ("This should not occur, the slug does not exist", False)
 			end
 		end

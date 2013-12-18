@@ -15,15 +15,14 @@ feature -- Access
 			file_name: STRING
 			file: RAW_FILE
 		do
-			-- Currently the type is ignored
+				-- Currently the type is ignored
 			file_name := file_name_for_slug (object.slug)
 			create file.make_open_write (file_name)
 			file.independent_store (object)
 			file.close
 		end
 
-	-- TODO: separate command / query
-	get_object_by_slug (type: STRING; slug: NON_EMPTY_STRING): detachable WORLD_STORABLE
+	retrieve_object_by_slug (type: STRING; slug: NON_EMPTY_STRING)
 			-- Retrieve an object with all its contents from world storage, if stored.
 			-- If not, try to create the object from a definition file, if exists.
 			-- If the file does not exist (or is unreadable), return Void and sets an error message.
@@ -34,36 +33,51 @@ feature -- Access
 		do
 			create file.make_with_name (file_name_for_slug (slug))
 			if file.access_exists then
+
+				-- Retrieve object from storage
 				create file.make_open_read (file_name_for_slug (slug))
-				if attached {WORLD_STORABLE} file.retrieved as retrieved_object then
-					Result := retrieved_object
+				if attached {WORLD_STORABLE} file.retrieved as o then
+					retrieved_object := o
 					last_error_message := ""
 				else
-					Result := Void
+					retrieved_object := Void
 					last_error_message := "Object file with slug '" + slug.to_string + "' is broken"
 				end
+				file.close
 			else
-    			definition_file := registry.get_definition_file_for(type)
-    			if attached definition_file.create_object_from_def (slug) as retrieved_object then
-    				Result := retrieved_object
-    				last_error_message := ""
-    			else
-    				Result := Void
-    				last_error_message := "Cannot find object with slug '" + slug.to_string + "'"
-    			end
-    		end
+
+				-- Create object from definition
+				definition_file := registry.get_definition_file_for (type)
+				definition_file.create_object_from_def (slug)
+				if not definition_file.error_occurred then
+					retrieved_object := definition_file.created_object
+					last_error_message := ""
+				else
+					retrieved_object := Void
+					last_error_message := definition_file.last_error_message
+				end
+			end
 		rescue
 			if attached file and then file.is_open_read then
 				file.close
 			end
 		end
 
+	retrieved_object: detachable WORLD_STORABLE
+			-- The object if the last call to retrieve_object_by_slug was successful, or Void if not.
+
 feature -- Status
 
+	error_occurred: BOOLEAN
+			-- True if the las call to retrieve_object_by_slug generated an error
+		do
+			Result := not last_error_message.is_empty
+		end
+
 	last_error_message: STRING
-			-- If last call to create_object_from_def generated an error, here it is the message.
+			-- If error_occurred, here it is the message.
 		attribute
-			Result := ""
+			Result := "(still not called)"
 		end
 
 feature {NONE} -- Configuration constants
@@ -78,5 +92,9 @@ feature {NONE} -- Implementation
 		do
 			Result := World_storage_dir + slug.to_string + Storage_file_extension
 		end
+
+invariant
+	no_object_if_error: error_occurred implies retrieved_object = Void
+	object_if_not_error: (not error_occurred) implies retrieved_object /= Void
 
 end

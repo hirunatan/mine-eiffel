@@ -9,20 +9,28 @@ deferred class
 
 feature -- Access
 
-	-- TODO: separate command / query
-	create_object_from_def (slug: NON_EMPTY_STRING): detachable WORLD_STORABLE
+	create_object_from_def (slug: NON_EMPTY_STRING)
 			-- Locate the file that describes the object identified by the slug, and instantiates
 			-- it from the description in the file.
 			-- If the file does not exist (or is unreadable), return Void and sets an error message.
 		deferred
 		end
 
+	created_object: detachable WORLD_STORABLE
+			-- The object if the last call to retrieve_object_by_slug was successful, or Void if not.
+
 feature -- Status
 
+	error_occurred: BOOLEAN
+			-- True if the las call to create_object_from_def generated an error
+		do
+			Result := not last_error_message.is_empty
+		end
+
 	last_error_message: STRING
-			-- If last call to create_object_from_def generated an error, here it is the message.
+			-- If error_occurred, here it is the message.
 		attribute
-			Result := ""
+			Result := "(still not called)"
 		end
 
 feature {DEFINITION_FILE} -- XML parsing

@@ -18,7 +18,7 @@ feature -- Redefinitions
 
 	Definition_file_subdir: STRING = "places/"
 
-	create_object_from_def (slug: NON_EMPTY_STRING): detachable PLACE
+	create_object_from_def (slug: NON_EMPTY_STRING)
 		local
 		    xml_element: XML_ELEMENT
 		do
@@ -37,9 +37,10 @@ feature -- Redefinitions
     			end
 			end
 			if slug.to_string.starts_with ("test") then
-				create Result.make(slug)
+				create {PLACE} created_object.make(slug)
+				last_error_message := ""
 			else
-			    Result := Void
+			    created_object := Void
 			    last_error_message := "Slug don't found"
 			end
 		end

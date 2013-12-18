@@ -21,7 +21,8 @@ feature {NONE} -- Initialization
 			storage: WORLD_STORAGE
 		do
 			create storage
-			if attached {PLACE} storage.get_object_by_slug ("PLACE", "poblado-calle01") as retrieved_place then
+			storage.retrieve_object_by_slug ("PLACE", "poblado-calle01")
+			if not storage.error_occurred then
 				print ("funsiona")
 			end
 		end
