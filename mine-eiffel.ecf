@@ -2,7 +2,7 @@
 <system xmlns="http://www.eiffel.com/developers/xml/configuration-1-12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-12-0 http://www.eiffel.com/developers/xml/configuration-1-12-0.xsd" name="mine-eiffel" uuid="E5355F62-3717-4800-B9DF-12F5F783431E">
 	<target name="mine-eiffel">
 		<root class="APPLICATION" feature="make"/>
-		<option warning="true" void_safety="transitional" syntax="standard">
+		<option warning="true" cat_call_detection="false" void_safety="transitional" syntax="standard">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="console_application" value="true"/>

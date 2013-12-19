@@ -43,7 +43,6 @@ feature {NONE} -- Implementation
 	main_loop
 		local
 		    command: STRING
-		    direction: NON_EMPTY_STRING
     	do
     		from
     		    quit := False
@@ -53,20 +52,26 @@ feature {NONE} -- Implementation
     			print (color(33) + "%N? " + color(37))
     			io.read_line
     		    command := io.last_string
-    		    if equal(command, "+salir") then
-    		    	print ("Adiós, vuelve pronto...%N%N")
-    		        quit := True
-    		    elseif equal(command, "+norte") or equal(command, "+sur") or equal(command, "+este") or equal(command, "+oeste") or equal(command, "+arriba") or equal(command, "+abajo") then
-    		    	create direction.make_from_string (command.substring (2, command.count))
-    		    	move_to (direction)
-    		    else
-					print ("[
-						Comando no reconocido, los comandos disponibles son
-						  +direccion: moverse en la dirección indicada (norte, sur, ...)
-						  +salir: terminar la ejecución
-					]")
-    		    end
+    		    process_command (command)
     		end
+    	end
+
+    process_command (command: STRING)
+    	do
+   		    if equal(command, "+salir") then
+   		    	print ("Adiós, vuelve pronto...%N%N")
+   		        quit := True
+   		    elseif movement_commands.has_key (command) then
+   		    	if attached movement_commands[command] as dir then
+ 	  		    	move_to (dir)
+   		    	end
+   		    else
+				print ("[
+					Comando no reconocido, los comandos disponibles son
+					  +direccion: moverse en la dirección indicada (norte, sur, ...)
+					  +salir: terminar la ejecución
+				]")
+    	    end
     	end
 
 	show_current_place
@@ -89,7 +94,13 @@ feature {NONE} -- Implementation
         		print ("--------------------------------------%N%N")
         		across place.exits as exits_cursor loop
         			if perception_roll > exits_cursor.item.difficulty_level.to_integer then
-	        			print (color(36) + "Hacia el " + exits_cursor.item.direction.to_string + " ves " + exits_cursor.item.description.to_string + "%N")
+	        			print (color(36))
+	        			if equal(exits_cursor.item.direction.to_string, "arriba") or equal(exits_cursor.item.direction.to_string, "abajo") then
+	        				print ("Hacia " + exits_cursor.item.direction.to_string)
+	        			else
+	        				print ("Hacia el " + exits_cursor.item.direction.to_string)
+	        			end
+	        			print (" ves " + exits_cursor.item.description.to_string + "%N")
 	        		end
        			end
        			first := True
@@ -141,6 +152,31 @@ feature {NONE} -- Implementation
 			-- ANSI codes to change the terminal text color
 		do
 			Result := "%/27/[0;" + color_number.out + "m"
+		end
+
+	movement_commands: HASH_TABLE [STRING, STRING]
+		once
+			create {HASH_TABLE [STRING, STRING]} Result.make (0)
+			Result.put ("norte", "+norte")
+			Result.put ("norte", "+n")
+			Result.put ("noreste", "+noreste")
+			Result.put ("noreste", "+ne")
+			Result.put ("este", "+este")
+			Result.put ("este", "+e")
+			Result.put ("sureste", "+sureste")
+			Result.put ("sureste", "+se")
+			Result.put ("sur", "+sur")
+			Result.put ("sur", "+s")
+			Result.put ("suroeste", "+suroeste")
+			Result.put ("suroeste", "+so")
+			Result.put ("oeste", "+oeste")
+			Result.put ("oeste", "+o")
+			Result.put ("noroeste", "+noroeste")
+			Result.put ("noroeste", "+no")
+			Result.put ("arriba", "+arriba")
+			Result.put ("arriba", "+ar")
+			Result.put ("abajo", "+abajo")
+			Result.put ("abajo", "+ab")
 		end
 
 end
