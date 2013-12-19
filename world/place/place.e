@@ -56,12 +56,15 @@ feature -- Attributes
 	exits: LIST [PLACE_EXIT]
 			-- The possible exits from this place to other ones
 
+	objects: LIST [PLACE_OBJECT]
+			-- The objects in this place
+
 feature {NONE} -- Initialization
 
 	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_area_name: NON_EMPTY_STRING; the_place_name: NON_EMPTY_STRING;
 	      the_aura: MAGNITUDE_INT_100; the_place_type: NON_EMPTY_STRING; the_place_subtype: NON_EMPTY_STRING;
 	      the_capacity: MAGNITUDE_REAL_POSITIVE; the_light: MAGNITUDE_INT_100; the_hiding_value: MAGNITUDE_INT_100;
-	      the_description: LIST [PLACE_DESCRIPTION_ITEM]; the_exits: LIST [PLACE_EXIT])
+	      the_description: LIST [PLACE_DESCRIPTION_ITEM]; the_exits: LIST [PLACE_EXIT]; the_objects: LIST [PLACE_OBJECT])
 		do
 			slug := the_slug
 			author := the_author
@@ -75,6 +78,7 @@ feature {NONE} -- Initialization
 			hiding_value := the_hiding_value
 			description := the_description
 			exits := the_exits
+			objects := the_objects
 		end
 
 end

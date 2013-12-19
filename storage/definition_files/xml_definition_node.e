@@ -104,6 +104,39 @@ feature -- Access
     		end
 		end
 
+	magnitude_int_positive_attribute (attribute_name: STRING; default_value: detachable MAGNITUDE_INT_POSITIVE): MAGNITUDE_INT_POSITIVE
+			-- Get a magnitude int positive attribute of the element. If not exists and default_value is not void, return it;
+			-- If it is void or the attribute is not valid, raise an exception.
+		require
+		    not_empty: not is_empty
+		local
+		    d_attr: detachable XML_ATTRIBUTE
+		    attr_value: INTEGER
+		do
+			Result := 0
+			if attached element as elem then
+    		    d_attr := elem.attribute_by_name (attribute_name)
+    		    if attached d_attr as attr and then not attr.value.is_empty then
+    		    	if attr.value.is_integer then
+    		    	    attr_value := attr.value.to_integer
+    		    	    if attr_value >= 0 then
+    		    	        Result := attr_value
+    		    	    else
+    		    	        raise ("Attribute '" + attribute_name + "' of element '" + elem.name + "' must be a number greater than 0")
+    		    	    end
+    		    	else
+    		    	    raise ("Attribute '" + attribute_name + "' of element '" + elem.name + "' must be a number")
+    		    	end
+    		    else
+    		    	if attached default_value then
+    		    	    Result := default_value
+    		    	else
+    					raise ("Cannot find attribute '" + attribute_name + "' of element '" + elem.name + "'")
+    		    	end
+    		    end
+    		end
+		end
+
 	magnitude_real_positive_attribute (attribute_name: STRING; default_value: detachable MAGNITUDE_REAL_POSITIVE): MAGNITUDE_REAL_POSITIVE
 			-- Get a magnitude real positive attribute of the element. If not exists and default_value is not void, return it;
 			-- If it is void or the attribute is not valid, raise an exception.

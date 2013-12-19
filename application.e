@@ -48,7 +48,7 @@ feature {NONE} -- Implementation
     		until
     		    quit = True
     		loop
-    			print ("%N? ")
+    			print (color(33) + "%N? " + color(37))
     			io.read_line
     		    command := io.last_string
     		    if equal(command, "+salir") then
@@ -71,15 +71,22 @@ feature {NONE} -- Implementation
 		do
 			if attached current_place as place then
         		print ("%N")
-        		print ("Estás en " + place.place_name.to_string + "%N%N")
-        		print ("------- Descripción del lugar -------%N%N")
+        		print (color(31) + "Estás en " + place.place_name.to_string + "%N%N")
+        		print (color(37) + "------- Descripción del lugar -------%N%N")
         		across place.description as desc_cursor loop
         			print (desc_cursor.item.text.to_string + "%N%N")
         		end
         		print ("--------------------------------------%N%N")
         		across place.exits as exits_cursor loop
-        			print ("Hacia el " + exits_cursor.item.direction.to_string + " ves " + exits_cursor.item.description.to_string + "%N")
+        			print (color(36) + "Hacia el " + exits_cursor.item.direction.to_string + " ves " + exits_cursor.item.description.to_string + "%N")
        			end
+       			if place.objects.count > 0 then
+       				print (color(32) + "%NAquí hay:%N")
+       				across place.objects as objects_cursor loop
+       					print (objects_cursor.item.description + "%N")
+       				end
+       			end
+       			print (color(37))
 			end
 		end
 
@@ -107,5 +114,11 @@ feature {NONE} -- Implementation
 	    		end
 	    	end
     	end
+
+	color (color_number: INTEGER): STRING
+			-- ANSI codes to change the terminal text color
+		do
+			Result := "%/27/[0;" + color_number.out + "m"
+		end
 
 end

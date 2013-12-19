@@ -25,7 +25,9 @@ feature
 			create place.make (
 				"test_area-test_place", "test author", "test_area", "The place of test", 50, "place type", "place subtype",
 				create {MAGNITUDE_REAL_POSITIVE}.make_from_real(500.5), 40, 20,
-				create {ARRAYED_LIST [PLACE_DESCRIPTION_ITEM]}.make (0), create {ARRAYED_LIST [PLACE_EXIT]}.make (0)
+				create {ARRAYED_LIST [PLACE_DESCRIPTION_ITEM]}.make (0),
+				create {ARRAYED_LIST [PLACE_EXIT]}.make (0),
+				create {ARRAYED_LIST [PLACE_OBJECT]}.make (0)
 			)
 
 			assert ("good_slug", equal (place.slug.to_string, "test_area-test_place"))
@@ -40,6 +42,7 @@ feature
 			assert ("good_hiding_value", place.hiding_value.to_integer = 20)
 			assert ("good_description", place.description.count = 0)
 			assert ("good_exits", place.exits.count = 0)
+			assert ("good_objects", place.objects.count = 0)
 		end
 
 end
