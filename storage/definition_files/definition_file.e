@@ -101,10 +101,10 @@ feature {NONE} -- Implementation
 					instantiate_object(xml_definition)
 					last_error_message := ""
 				else
-				   	error ("Error reading definition for '" + the_slug.to_string + "': " + xml_definition.last_error_message)
+				   	raise ("Error reading definition for '" + the_slug.to_string + "': " + xml_definition.last_error_message)
 				end
 			else
-			    error ("Cannot find definition for '" + the_slug.to_string + "'")
+			    raise ("Cannot find definition for '" + the_slug.to_string + "'")
 			end
 		end
 
@@ -116,7 +116,7 @@ feature {NONE} -- Implementation
 			if not pieces.is_empty then
 			    Result := Definition_file_dir + Definition_file_subdir + pieces[1] + "/" + the_slug.to_string + ".xml"
 			else
-			    error ("Bad formed slug: '" + the_slug.to_string + "'")
+			    raise ("Bad formed slug: '" + the_slug.to_string + "'")
 			    Result := "xx"  -- Required by void safety, this will never execute
 			end
 		end
