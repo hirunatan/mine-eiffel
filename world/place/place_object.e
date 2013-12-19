@@ -41,7 +41,6 @@ feature {NONE} -- Initialization
    		local
    			i: INTEGER
 		do
-			create dices.make
             object_slug := the_object_slug
             probability := the_probability
             maximum := the_maximum
@@ -63,10 +62,10 @@ feature -- Events
 			-- When any character enters he place, objects may appear or disappear
 	do
 		if probability > 0 then
-			dices.forth
-        	if dices.roll_1d100 > probability.to_integer then
-        		dices.forth
-        		if dices.roll_1d100 > 50 then
+			dices.roll_1d100
+        	if dices.roll_result > probability.to_integer then
+        		dices.roll_1d100
+        		if dices.roll_result > 50 then
         			if instances.count < maximum then
         				object_appears
         			end

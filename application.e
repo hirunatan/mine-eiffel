@@ -18,8 +18,7 @@ feature {NONE} -- Initialization
 	make
 			-- Run application.
 		do
-			create dices.make
-			storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, "poblado-calle01")
+			storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, "poblado-camino01")
 			if storage.error_occurred then
 				print ("Error recuperando sala inicial: " + storage.last_error_message)
 			else
@@ -73,29 +72,30 @@ feature {NONE} -- Implementation
 	show_current_place
 		local
 			first: BOOLEAN
+			perception_roll: INTEGER
 		do
 			if attached current_place as place then
+				dices.roll_1d100
+				perception_roll := dices.roll_result
+
         		print ("%N")
         		print (color(31) + "Estás en " + place.place_name.to_string + "%N%N")
         		print (color(37) + "------- Descripción del lugar -------%N%N")
         		across place.description as desc_cursor loop
-        			dices.forth
-        			if dices.roll_1d100 > desc_cursor.item.difficulty_level.to_integer then
+        			if perception_roll > desc_cursor.item.difficulty_level.to_integer then
         				print (desc_cursor.item.text.to_string + "%N%N")
         			end
         		end
         		print ("--------------------------------------%N%N")
         		across place.exits as exits_cursor loop
-        			dices.forth
-        			if dices.roll_1d100 > exits_cursor.item.difficulty_level.to_integer then
+        			if perception_roll > exits_cursor.item.difficulty_level.to_integer then
 	        			print (color(36) + "Hacia el " + exits_cursor.item.direction.to_string + " ves " + exits_cursor.item.description.to_string + "%N")
 	        		end
        			end
        			first := True
        			across place.objects as objects_cursor loop
        				if objects_cursor.item.instances.count > 0 then
-	        			dices.forth
-	        			if dices.roll_1d100 > objects_cursor.item.difficulty_level.to_integer then
+	        			if perception_roll > objects_cursor.item.difficulty_level.to_integer then
 		       				if first then
 		       					print (color(32) + "%NAquí hay:%N")
 		       					first := False

@@ -4,35 +4,25 @@ note
 	date: "$Date$"
 	revision: "$Revision$"
 
-class
+expanded class
 	DICES
-
-create
-	make
-
-feature {NONE} -- Constructor
-
-	make
-		do
-			create random.make
-		end
 
 feature -- Rolls
 
-	forth
-			-- Get the next roll
+	roll_1d100
+			-- Roll one dice of 100 heads
 		do
 			random.forth
+			roll_result := random.item \\ 100 + 1
 		end
 
-	roll_1d100: INTEGER
-			-- Get the roll as a 1d100
-		do
-			Result := random.item \\ 100 + 1
-		end
+	roll_result: INTEGER
 
-feature -- Implementation
+feature {NONE} -- Implementation
 
 	random: RANDOM
+		once
+			create Result.make
+		end
 
 end
