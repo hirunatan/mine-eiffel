@@ -4,7 +4,7 @@ note
 	date: "$Date$"
 	revision: "$Revision$"
 
-class
+expanded class
 	WORLD_STORAGE
 
 feature -- Access
@@ -25,7 +25,7 @@ feature -- Access
 	retrieve_object_by_slug (type: STRING; slug: NON_EMPTY_STRING)
 			-- Retrieve an object with all its contents from world storage, if stored.
 			-- If not, try to create the object from a definition file, if exists.
-			-- If the file does not exist (or is unreadable), return Void and sets an error message.
+			-- If the file does not exist (or is unreadable), return sets an error message.
 		local
 			file: detachable RAW_FILE
 			registry: DEFINITION_FILE_REGISTRY

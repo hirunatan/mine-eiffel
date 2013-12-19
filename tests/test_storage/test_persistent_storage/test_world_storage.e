@@ -22,7 +22,6 @@ feature -- Test routines
 		local
 			storage: WORLD_STORAGE
 		do
-			create storage
 			storage.retrieve_object_by_slug("PLACE", "poblado-calle01") -- This time should create the object from definition
 			if storage.error_occurred then
 				assert ("create error, message: " + storage.last_error_message, False)
