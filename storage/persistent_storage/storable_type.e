@@ -14,11 +14,13 @@ feature -- Enum values
 
     Place: INTEGER = 1
 
+    Object: INTEGER = 2
+
 feature -- Validation
 
     is_valid_type(type: INTEGER): BOOLEAN
     	do
-    	    Result := (type = Place)
+    	    Result := (type = Place or type = Object)
     	end
 
 end

@@ -17,6 +17,8 @@ feature -- Access to files
 			inspect type
 			when {STORABLE_TYPE}.Place then
 				create {DEFINITION_FILE_PLACE} Result.make_with_slug (slug)
+			when {STORABLE_TYPE}.Object then
+				create {DEFINITION_FILE_OBJECT} Result.make_with_slug (slug)
 			end
 		end
 

@@ -15,8 +15,7 @@ inherit
 			slug
 		end
 
---create {DEFINITION_FILE_OBJECT, TEST_OBJECT}
-create {TEST_OBJECT}
+create {DEFINITION_FILE_OBJECT, TEST_OBJECT}
 	make
 
 feature -- Attributes
@@ -51,7 +50,7 @@ feature -- Attributes
 	aura: MAGNITUDE_INT_100
 			-- Aura level of this place (<50 = evil, 50 = neutral, >50 = good)
 
-	description: LIST [PLACE_DESCRIPTION_ITEM]
+	description: LIST [OBJECT_DESCRIPTION_ITEM]
 			-- The visible description of the objects (composed of items, some of that which not be visible for a character)
 
 feature {NONE} -- Initialization
@@ -59,7 +58,7 @@ feature {NONE} -- Initialization
 	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_object_name: NON_EMPTY_STRING;
               the_object_type: NON_EMPTY_STRING; the_object_category: NON_EMPTY_STRING; the_weight: MAGNITUDE_REAL_POSITIVE;
               the_size: MAGNITUDE_REAL_POSITIVE; the_price: MAGNITUDE_REAL_POSITIVE; the_state: MAGNITUDE_INT_100;
-              the_aura: MAGNITUDE_INT_100; the_description: LIST [PLACE_DESCRIPTION_ITEM])
+              the_aura: MAGNITUDE_INT_100; the_description: LIST [OBJECT_DESCRIPTION_ITEM])
 		do
             slug := the_slug
             author := the_author

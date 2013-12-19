@@ -106,11 +106,10 @@ feature {NONE} -- Implementation
 		    pieces: LIST [STRING]
 		do
 			pieces := slug.to_string.split('-')
-			if not pieces.is_empty then
+			if pieces.count > 1 then
 			    Result := Definition_file_dir + Definition_file_subdir + pieces[1] + "/" + slug.to_string + ".xml"
 			else
-			    raise ("Bad formed slug: '" + slug.to_string + "'")
-			    Result := "xx"  -- Required by void safety, this will never execute
+			    Result := Definition_file_dir + Definition_file_subdir + slug.to_string + ".xml"
 			end
 		end
 
