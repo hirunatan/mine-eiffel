@@ -15,7 +15,7 @@ inherit
 			slug
 		end
 
-create {DEFINITION_FILE_PLACE}
+create {DEFINITION_FILE_PLACE, TEST_PLACE}
 	make
 
 feature -- Attributes
@@ -58,7 +58,10 @@ feature -- Attributes
 
 feature {NONE} -- Initialization
 
-	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_area_name: NON_EMPTY_STRING; the_place_name: NON_EMPTY_STRING; the_aura: MAGNITUDE_INT_100; the_place_type: NON_EMPTY_STRING; the_place_subtype: NON_EMPTY_STRING; the_capacity: MAGNITUDE_REAL_POSITIVE; the_light: MAGNITUDE_INT_100; the_hiding_value: MAGNITUDE_INT_100; the_description: LIST [PLACE_DESCRIPTION_ITEM]; the_exits: LIST [PLACE_EXIT])
+	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_area_name: NON_EMPTY_STRING; the_place_name: NON_EMPTY_STRING;
+	      the_aura: MAGNITUDE_INT_100; the_place_type: NON_EMPTY_STRING; the_place_subtype: NON_EMPTY_STRING;
+	      the_capacity: MAGNITUDE_REAL_POSITIVE; the_light: MAGNITUDE_INT_100; the_hiding_value: MAGNITUDE_INT_100;
+	      the_description: LIST [PLACE_DESCRIPTION_ITEM]; the_exits: LIST [PLACE_EXIT])
 		do
 			slug := the_slug
 			author := the_author
