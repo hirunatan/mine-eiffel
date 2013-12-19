@@ -30,11 +30,13 @@
 				</cluster>
 				<cluster name="test_world" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\test_world\">
 					<cluster name="test_place" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\test_world\test_place\"/>
+					<cluster name="test_object" location="\home\andres\Personal\Desarrollo\mine-eiffel\tests\test_world\test_object\"/>
 				</cluster>
 			</cluster>
 			<cluster name="world" location="\home\andres\Personal\Desarrollo\mine-eiffel\world\">
 				<cluster name="common" location="\home\andres\Personal\Desarrollo\mine-eiffel\world\common\"/>
 				<cluster name="place" location="\home\andres\Personal\Desarrollo\mine-eiffel\world\place\"/>
+				<cluster name="object" location="\home\andres\Personal\Desarrollo\mine-eiffel\world\object\"/>
 			</cluster>
 		</cluster>
 	</target>

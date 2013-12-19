@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Hirunatan">
+
+<id>sarten01</id>
+
+<nombre>una sarten</nombre>
+
+<descripcion>
+  <item>Una sarten de lo más corriente.</item>
+</descripcion>
+
+<propiedades tipo="metal" categoria="herramienta" aura="50" volumen="0.2"
+    peso="0.5" valor="5" estado="100"/>
+
+<sucesos>
+</sucesos>
+
+</objeto>

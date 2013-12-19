@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Hirunatan">
+
+<id>pan01</id>
+
+<nombre>un trozo de [pan]</nombre>
+
+<descripcion>
+    <item>Una hermosa barra de pan recien horneado.</item>
+</descripcion>
+
+<propiedades tipo="organico" categoria="comestible" aura="50" volumen="0.1"
+    peso="0.5" cargas="3" valor="1" estado="100" propietario="posadero"/>
+
+<sucesos>
+  <personaje_come>
+
+    <accion base="Personaje" nombre="actuar_uno_mismo"
+	texto="Te comes un buen pedazo de pan"/>
+
+    <accion base="Personaje" nombre="actuar_uno_mismo"
+	    texto="Te ha quitado algo de hambre"/>
+
+    <accion base="Personaje" nombre="alimentar" puntos_nutritivos="4"/>
+
+    <accion base="Objeto" nombre="cambiar_cargas" cargas="-1"/>
+
+    <requisito base="Objeto" nombre="cargas" comparador="menor_o_igual" valor="0">
+	<cumplido>
+	    <accion base="Personaje" nombre="actuar_uno_mismo"
+		    texto="Se acabó el trozo de pan"/>
+	    <accion base="Objeto" nombre="destruir"/>
+	</cumplido>
+	<no_cumplido/>
+    </requisito>
+
+  </personaje_come>
+
+</sucesos>
+
+
+</objeto>

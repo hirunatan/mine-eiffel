@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Mandos">
+
+<id>vino01</id>
+
+<nombre>una botella de [vino]</nombre>
+
+<descripcion>
+  <item>Una botella de vino tinto corriente.</item>
+</descripcion>
+
+<propiedades tipo="cristal" categoria="comestible" aura="45" volumen="0.1"
+    peso="0.5" cargas="5" valor="4" estado="100" propietario="posadero"/>
+
+<sucesos>
+  <personaje_bebe>
+    <requisito base="Objeto" nombre="cargas" comparador=">" valor="0">
+    <no_cumplido>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="La botella está vacía"/>
+
+      <accion nombre="cancelar"/>
+
+    </no_cumplido>
+    <cumplido>
+
+      <accion nombre="aceptar"/>
+
+      <accion base="Objeto" nombre="cambiar_cargas" cargas="-1"/>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="Te bebes un buen trago de vino"/>
+
+      <accion base="Personaje" nombre="cambiar_vida" puntos="+1"/>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="Te quita la sed, de momento"/>
+
+      <accion base="Personaje" nombre="cambiar_atributo" nombre_atributo="inteligencia"
+	      niveles="-1"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="Eso si, tu cabeza se enturbia un poco"/>
+
+      <accion base="Personaje" nombre="cambiar_atributo" nombre_atributo="carisma"
+	      niveles="+1"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="y aunque te sientes más entusiasmado"/>
+
+      <accion base="Personaje" nombre="cambiar_idioma" idioma="quenya"
+	      niveles="-1"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="cambiar_idioma" idioma="enano"
+	      niveles="-1"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="cambiar_idioma" idioma="oestron"
+	      niveles="-1"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="cambiar_idioma" idioma="orco"
+	      niveles="-1"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="tu facilidad de palabra se reduce algo..."/>
+
+    </cumplido>
+    </requisito>
+
+  </personaje_bebe>
+
+</sucesos>
+
+</objeto>

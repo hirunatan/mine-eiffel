@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Aranarth">
+
+<id>pocion01</id>
+
+<nombre>Pocion recuperadora</nombre>
+
+<descripcion>
+  <item>Se trata de un elixir fabricado a partir
+  de hojas frescas de diversas plantas y que 
+  devuelve un poco de vitalidad a la persona que
+  la ingiere.</item>
+  
+  <!--<item dificultad="40">Devuelve hasta 15 pv.</item>-->
+  <item>Devuelve hasta 15 pv.
+      <personaje_mira>
+	  <requisito base="Personaje" nombre="resultado_tirada"
+	             id_tirada="percepcion_sala" dificultad="15"
+		     comparador=">" valor="0"/>
+      </personaje_mira>
+  </item>
+</descripcion>
+
+<propiedades tipo="cristal" categoria="comestible" aura="65" volumen="0.1"
+    peso="0.050" cargas="3" valor="1000" estado="100"/>
+
+<sucesos>
+  <personaje_bebe>
+    <requisito base="Objeto" nombre="cargas" comparador=">" valor="0">
+    <no_cumplido>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="El frasco de poción está vacío"/>
+
+      <accion nombre="cancelar"/>
+
+    </no_cumplido>
+    <cumplido>
+
+      <accion nombre="aceptar"/>
+
+      <accion base="Objeto" nombre="cambiar_cargas" cargas="-1"/>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="Te bebes la poción. Tiene un sabor amargo, pero se soporta."/>
+
+      <requisito base="Personaje" nombre="atributo" nombre_atributo="sabiduria"
+		 comparador=">=" valor="8">
+	<no_cumplido>
+
+	  <accion base="Personaje" nombre="actuar_uno_mismo"
+		  texto="Tu estupido cerebro no acepta el poder de esta pocion.
+			 Te sientes aturdido durante un rato, pero no notas
+			 ningun otro efecto."/>
+
+	</no_cumplido>
+	<cumplido>
+
+	  <requisito base="Personaje" nombre="atributo" nombre_atributo="destreza"
+		     comparador=">=" valor="5">
+
+	    <no_cumplido>
+	      <accion base="Personaje" nombre="actuar_uno_mismo"
+		      texto="Tu cuerpo es mas torpe que un tronco viejo y no tolera
+			     los efectos de esta pocion. No sientes nada."/>
+	    </no_cumplido>
+
+	    <cumplido>
+	      <accion base="Personaje" nombre="cambiar_vida" puntos="+15"/>
+
+	      <accion base="Personaje" nombre="actuar_uno_mismo"
+		  texto="Te sientes repleto de vida y salud."/>
+
+	      <accion base="Personaje" nombre="cambiar_atributo"
+		  nombre_atributo="constitucion" niveles="+3"/> <!-- duracion="300" -->
+
+	      <accion base="Personaje" nombre="cambiar_atributo"
+		  nombre_atributo="fuerza" niveles="+1"/> <!-- duracion="300" -->
+	    </cumplido>
+
+	  </requisito>
+
+	</cumplido>
+        </requisito>
+
+    </cumplido>
+    </requisito>
+  </personaje_bebe>
+</sucesos>
+
+</objeto>
+

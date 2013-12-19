@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Hirunatan">
+
+<id>cocina01</id>
+
+<nombre>una cocina de leña</nombre>
+
+<descripcion>
+  <item>Un armatoste de hierro, grandote y pesado.</item>
+  <item>Tiene una portezuela por abajo, por donde se echa la leña, que se puede
+        encender con un chispero. La leña ardiendo calienta unas placas que hay
+        en la superficie, permitiendo cocinar en ellas.</item>
+</descripcion>
+
+<propiedades tipo="metal" categoria="herramienta" aura="50" volumen="1"
+    peso="99999" valor="30" estado="100"/>
+
+<sucesos>
+</sucesos>
+
+</objeto>

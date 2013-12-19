@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Mandos">
+
+<id>cuerda02</id>
+
+<nombre>Cuerda de calidad</nombre>
+
+<descripcion>
+    <item>15 metros de cuerda de calidad, muy resistente y ligera 
+	especialmente hecha para resistir fuertes pesos.</item>
+</descripcion>
+
+<propiedades tipo="tejido" categoria="accesorio" aura="50" volumen="0.3"
+    peso="1.5" valor="1200" estado="100"/>
+
+<sucesos>
+</sucesos>
+
+</objeto>

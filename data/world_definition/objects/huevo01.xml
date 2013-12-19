@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Hirunatan">
+
+<id>huevo01</id>
+
+<nombre>un huevo de gallina</nombre>
+
+<descripcion>
+  <item>Un simple huevo de gallina, moreno.</item>
+</descripcion>
+
+<propiedades tipo="organico" categoria="comestible" aura="50" volumen="0.05"
+    peso="0.05" valor="1" estado="100"/>
+
+<sucesos>
+
+  <personaje_come>
+    <accion base="Personaje" nombre="actuar_uno_mismo"
+            texto="Abres el huevo y te lo comes crudo."/>
+
+    <accion base="Personaje" nombre="actuar_uno_mismo"
+            texto="No está muy bueno, pero te quita algo de hambre."/>
+
+    <accion base="Personaje" nombre="alimentar" puntos_nutritivos="2"/>
+
+    <accion base="Objeto" nombre="destruir"/>
+  </personaje_come>
+
+  <personaje_usa>
+      <accion base="Personaje" nombre="actuar_uno_mismo" 
+	      texto="Un huevo no se puede usar por si mismo..."/>
+  </personaje_usa>
+
+  <personaje_usa_con>
+    <requisito base="Objeto" nombre="nombre" id="$objeto2" comparador="es" valor="*sart?n*">
+      <cumplido>
+
+	<requisito base="Sala" nombre="objeto_en_sala" nombre_objeto="*cocina*" comparador="=" valor="si">
+	  <cumplido>
+	    <accion base="Objeto" nombre="reemplazar" id_objeto_nuevo="huevo_frito01"/>
+	    <accion base="Personaje" nombre="actuar_uno_mismo"
+	            texto="Cascas el huevo, lo echas en la sartén, lo pones al fuego de la cocina..."/>
+	    <accion base="Personaje" nombre="actuar_uno_mismo"
+		    texto="Tralaraaa, soy cocinerooooo... Ya está: tienes un estupendo huevo frito."/>
+	    <accion nombre="aceptar"/>
+	  </cumplido>
+	  <no_cumplido>
+            <accion base="Personaje" nombre="actuar_uno_mismo"
+		    texto="Para hacer eso necesitas una cocina."/>
+	    <accion nombre="cancelar"/>
+ 	  </no_cumplido>
+	</requisito>
+
+      </cumplido>
+      <no_cumplido>
+
+	<accion base="Personaje" nombre="actuar_uno_mismo"
+   	        texto="No puedes usar el huevo con ese objeto."/>
+	<accion nombre="cancelar"/>
+
+      </no_cumplido>
+    </requisito>
+  </personaje_usa_con>
+
+</sucesos>
+
+</objeto>

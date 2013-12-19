@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Aranarth">
+
+<id>pluma_de_ave01</id>
+
+<nombre>una pluma de ave</nombre>
+
+<descripcion>
+  <item>Una pluma de ave para escribir.<item>
+</descripcion>
+
+<propiedades tipo="organico" categoria="accesorio" aura="50" volumen="0.1" 
+    peso="0.1" estado="90" valor="80"/>
+
+<sucesos>
+</sucesos>
+
+</objeto>

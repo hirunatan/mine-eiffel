@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objeto SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Hirunatan">
+
+<id>espada01</id>
+
+<nombre>una espada</nombre>
+
+<descripcion>
+  <item>Una espada de acero, bastante corriente.</item>
+</descripcion>
+
+<propiedades tipo="metal" categoria="arma" aura="50" volumen="0.4" 
+    peso="5" estado="100" valor="2000"/>
+
+<sucesos>
+</sucesos>
+<!--
+<usos>
+  <uso tipo="ponerse" posicion="mano_der">
+    <efecto atributo="ataque" valor="+5" msg="Blandes la espada"/>
+  </uso>
+  <uso tipo="ponerse" posicion="mano_izq">
+      <requisito atributo="destreza" valor="2" 
+	  msg="Eres demasiado torpe para blandirla con la izquierda" />
+      <efecto atributo="ataque" valor="+2" msg="Ahora puedes atacar con la espada, pero con esa mano no la manejas muy bien"/>
+  </uso>
+</usos>
+-->
+
+</objeto>

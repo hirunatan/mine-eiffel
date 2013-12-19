@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Hirunatan">
+
+<id>huevo_frito01</id>
+
+<nombre>un huevo frito</nombre>
+
+<descripcion>
+  <item>un huevo frito, apetitoso y energético.</item>
+</descripcion>
+
+<propiedades tipo="organico" categoria="comestible" aura="50" volumen="0.05"
+    peso="0.05" valor="2" estado="100"/>
+
+<sucesos>
+  <personaje_come>
+    <accion base="Personaje" nombre="actuar_uno_mismo"
+	    texto="Te comes el huevo frito, está rico."/>
+
+    <accion base="Personaje" nombre="actuar_uno_mismo"
+	    texto="Te quita algo de hambre."/>
+
+    <accion base="Personaje" nombre="alimentar" puntos_nutritivos="5"/>
+
+    <accion base="Objeto" nombre="destruir"/>
+  </personaje_come>
+</sucesos>
+
+</objeto>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Hirunatan">
+
+<id>poblado-llave_porton01</id>
+
+<nombre>una llave pesada</nombre>
+
+<descripcion>
+    <item>Una llave enorme y pesada, con pinta de abrir una gran puerta.</item>
+</descripcion>
+
+<propiedades tipo="metal" categoria="accesorio" aura="50" volumen="0.2"
+    peso="0.5" valor="1" estado="100"/>
+
+<sucesos>
+</sucesos>
+
+</objeto>

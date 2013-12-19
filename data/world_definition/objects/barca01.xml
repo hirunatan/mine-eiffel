@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Mandos">
+
+<id>barca01</id>
+
+<nombre>Pequenyo bote</nombre>
+
+<descripcion>
+  <item>Un bote con capacidad para una sola persona.</item>
+</descripcion>
+
+<propiedades tipo="madera" categoria="accesorio" aura="50" volumen="3.5"
+    peso="77000" cargas="0" valor="70000" estado="100"/>
+
+<sucesos>
+</sucesos>
+
+</objeto>

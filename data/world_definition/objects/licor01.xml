@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Mandos">
+
+<id>licor01</id>
+
+<nombre>una botella de [licor]</nombre>
+
+<descripcion>
+    <item>Una botella de licor barato. Pone que está hecho con cerezas
+	y productos naturales.</item>
+    <item dificultad="20">Evidentemente el fabricante consideró el alcohol
+	el producto natural por excelencia porque parece contener una buena
+	cantidad.</item>
+</descripcion>
+
+<propiedades tipo="cristal" categoria="comestible" aura="40" volumen="0.1"
+    peso="1" cargas="5" valor="10" estado="100" propietario="posadero"/>
+
+<sucesos>
+  <personaje_bebe>
+    <requisito base="Objeto" nombre="cargas" comparador=">" valor="0">
+    <no_cumplido>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="La botella está vacía"/>
+
+      <accion nombre="cancelar"/>
+
+    </no_cumplido>
+    <cumplido>
+
+      <accion nombre="aceptar"/>
+
+      <accion base="Objeto" nombre="cambiar_cargas" cargas="-1"/>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="Te bebes un lingotazo de licor"/>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="No solo no te quita la sed, sino que sientes un calor
+	             abrasador que baja por tu garganta, raspando como lija"/>
+
+      <accion base="Personaje" nombre="cambiar_atributo" nombre_atributo="inteligencia"
+	      niveles="-2"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="Y además tu cabeza se enturbia bastante"/>
+
+      <accion base="Personaje" nombre="cambiar_atributo" nombre_atributo="carisma"
+	      niveles="+2"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="y aunque te sientes mucho más entusiasmado"/>
+
+      <accion base="Personaje" nombre="cambiar_idioma" idioma="quenya"
+	      niveles="-2"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="cambiar_idioma" idioma="enano"
+	      niveles="-2"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="cambiar_idioma" idioma="oestron"
+	      niveles="-2"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="cambiar_idioma" idioma="orco"
+	      niveles="-2"/>  <!-- duracion="50" -->
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="tu facilidad de palabra se reduce bastante..."/>
+
+    </cumplido>
+    </requisito>
+
+  </personaje_bebe>
+
+</sucesos>
+
+</objeto>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Mandos">
+
+<id>brandy01</id>
+
+<nombre>una botella de [brandy]</nombre>
+
+<descripcion>
+  <item>Bebida alcoholica bastante buena, pero algo fuerte.</item>
+</descripcion>
+
+<propiedades tipo="cristal" categoria="comestible" aura="40" volumen="0.1"
+    peso="1" cargas="4" valor="10" estado="100" propietario="posadero"/>
+
+<sucesos>
+  <personaje_bebe>
+    <guion id="bebida_alcoholica-beber"
+           texto_vacio="La botella está vacía"
+	   texto_beber="Te bebes un buen trago de brandy."
+	   texto_sed="Te quita la sed, de momento"
+	   texto_inteligencia="Eso si, tu cabeza se enturbia bastante"
+	   texto_carisma="y aunque te sientes mucho más entusiasmado"
+	   texto_idiomas="tu facilidad de palabra se reduce bastante..."
+	   puntos_sed="+1"
+	   puntos_inteligencia="-2"
+	   puntos_carisma="+2"
+	   puntos_idiomas="-2"/>
+  </personaje_bebe>
+</sucesos>
+
+</objeto>

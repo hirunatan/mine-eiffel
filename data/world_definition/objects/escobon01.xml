@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Hirunatan">
+
+<id>escobon01</id>
+
+<nombre>un escobon grande</nombre>
+
+<descripcion>
+    <item>Un escobon grandote y pesado, muy bueno para quitar la roña de las
+	sucias calles de este poblado.</item>
+</descripcion>
+
+<propiedades tipo="madera" categoria="accesorio" aura="45" volumen="1"
+    peso="3" valor="4" estado="100"/>
+
+<sucesos>
+    <personaje_usa>
+	<guion id="calle_sucia-limpiar"/>
+    </personaje_usa>
+</sucesos>
+
+</objeto>

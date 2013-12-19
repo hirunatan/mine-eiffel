@@ -36,7 +36,7 @@ feature -- Attributes
 			-- Aura level of this place (<50 = evil, 50 = neutral, >50 = good)
 
 	place_type: NON_EMPTY_STRING
-			-- Tye type of place
+			-- The type of place
 
 	place_subtype: NON_EMPTY_STRING
 			-- The subtype of place

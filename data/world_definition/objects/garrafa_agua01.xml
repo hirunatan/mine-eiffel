@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Mandos">
+
+<id>garrafa_agua01</id>
+
+<nombre>una garrafa de [agua]</nombre>
+
+<descripcion>
+  <item>Una botella grande de agua, bastante potable.</item>
+</descripcion>
+
+<propiedades tipo="cristal" categoria="comestible" aura="50" volumen="0.2"
+    peso="1.5" cargas="5" valor="1" estado="100" propietario="posadero"/>
+
+<sucesos>
+  <personaje_bebe>
+    <requisito base="Objeto" nombre="cargas" comparador=">" valor="0">
+    <no_cumplido>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	  texto="La garrafa está vacía"/>
+
+      <accion nombre="cancelar"/>
+
+    </no_cumplido>
+    <cumplido>
+
+      <accion nombre="aceptar"/>
+
+      <accion base="Objeto" nombre="cambiar_cargas" cargas="-1"/>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="Te bebes un buen trago de la garrafa"/>
+
+      <accion base="Personaje" nombre="cambiar_vida" puntos="+2"/>
+
+      <accion base="Personaje" nombre="actuar_uno_mismo"
+	      texto="Te refresca y te quita la sed"/>
+
+    </cumplido>
+    </requisito>
+
+  </personaje_bebe>
+
+</sucesos>
+
+
+</objeto>

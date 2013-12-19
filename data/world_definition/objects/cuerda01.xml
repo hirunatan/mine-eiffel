@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Mandos">
+
+<id>cuerda01</id>
+
+<nombre>Cuerda</nombre>
+
+<descripcion>
+  <item>15 metros de cuerda resistente.</item>
+</descripcion>
+
+<propiedades tipo="tejido" categoria="accesorio" aura="50" volumen="0.35"
+    peso="3" valor="400" estado="100"/>
+
+<sucesos>
+</sucesos>
+
+</objeto>

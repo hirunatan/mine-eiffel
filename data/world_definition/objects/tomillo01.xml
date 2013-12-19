@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Aranarth">
+
+<id>tomillo01</id>
+
+<nombre>unas ramitas de [tomillo]</nombre>
+
+<descripcion>
+  <item>Unas pocas ramitas de tomillo muy oloroso.</item>
+</descripcion>
+
+<propiedades tipo="organico" categoria="comestible" aura="51" volumen="0.1" 
+	peso="0.1" estado="85" valor="05" cargas="1" />
+
+<sucesos>
+
+  <personaje_come>
+    <accion base="Personaje" nombre="actuar_uno_mismo" 
+            texto="Te comes el tomillo sin tratarlo"/>
+    <accion base="Personaje" nombre="cambiar_vida" puntos="+1"/>
+    <accion base="Objeto" nombre="destruir"/>
+  </personaje_come>
+
+  <personaje_usa>
+    <accion base="Sala" nombre="ambiente" texto="Un agradable aroma inunda el lugar"/>
+    <accion base="Sala" nombre="cambiar_aura" puntos="+1"/>  <!-- duracion=300 ? -->
+  </personaje_usa>
+
+  <personaje_pone_cabeza>
+    <accion base="Personaje" nombre="actuar_uno_mismo"
+      texto="Ahora eres un ser con una rama de tomillo en la oreja."/>
+  </personaje_pone_cabeza>
+
+  <personaje_quita_cabeza>
+    <accion base="Personaje" nombre="actuar_uno_mismo"
+      texto="Ahora eres un ser sin una rama de tomillo en la oreja."/>
+  </personaje_quita_cabeza>
+
+</sucesos>
+
+</objeto>
+

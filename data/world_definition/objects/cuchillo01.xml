@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE objetodeMine SYSTEM "mine_objeto.dtd">
+
+<objeto version="1.0.1" autor="Aranarth">
+
+<id>cuchillo01</id>
+
+<nombre>un cuchillo</nombre>
+
+<descripcion>
+  <item>Un cuchillo de cocina muy normalito.</item>
+</descripcion>
+
+<propiedades tipo="metal" categoria="arma" aura="50" volumen="0.2" 
+   peso="0.4" estado="67" valor="56"/>
+
+<sucesos>
+</sucesos>
+<!--
+<usos>
+  <uso tipo="ponerse" posicion="mano_der">
+    <efecto atributo="ataque" valor="+2" msg="Empuñas el cuchillo"/>
+  </uso>
+  <uso tipo="ponerse" posicion="mano_izq">
+
+    <requisito atributo="destreza" valor="1" msg="Eres demasiado torpe
+    para empuñarlo con la izquierda" />
+
+    <efecto atributo="ataque" valor="+1" msg="Ahora puedes atacar con
+    el cuchillo, pero con esa mano no lo manejas muy bien"/>
+
+  </uso>
+  <uso tipo="lanzar">
+    
+    <requisito atributo="destreza" valor="5" msg="Eres demasiado torpe
+    para lanzarlo con la mano" />
+
+    <efecto atributo="ataque" valor="+2" msg="Has lanzado el cuchillo!"/>
+
+  </uso>
+
+</usos>
+-->
+</objeto>
