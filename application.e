@@ -20,7 +20,7 @@ feature {NONE} -- Initialization
 		local
 			storage: WORLD_STORAGE
 		do
-			storage.retrieve_object_by_slug ("PLACE", "poblado-calle01")
+			storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, "poblado-calle01")
 			if not storage.error_occurred then
     			if attached {PLACE} storage.retrieved_object as place then
     				print ("%N")

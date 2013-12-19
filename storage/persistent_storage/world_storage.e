@@ -7,6 +7,10 @@ note
 expanded class
 	WORLD_STORAGE
 
+feature -- Object types
+
+	Place_type: INTEGER = 1
+
 feature -- Access
 
 	store_object (type: STRING; object: WORLD_STORABLE)
@@ -22,7 +26,7 @@ feature -- Access
 			file.close
 		end
 
-	retrieve_object_by_slug (type: STRING; slug: NON_EMPTY_STRING)
+	retrieve_object_by_slug (type: INTEGER; slug: NON_EMPTY_STRING)
 			-- Retrieve an object with all its contents from world storage, if stored.
 			-- If not, try to create the object from a definition file, if exists.
 			-- If the file does not exist (or is unreadable), return sets an error message.
@@ -47,8 +51,7 @@ feature -- Access
 			else
 
 				-- Create object from definition
-				definition_file := registry.get_definition_file_for (type)
-				definition_file.create_object_from_def (slug)
+				definition_file := registry.get_definition_file_for (type, slug)
 				if not definition_file.error_occurred then
 					retrieved_object := definition_file.created_object
 					last_error_message := ""

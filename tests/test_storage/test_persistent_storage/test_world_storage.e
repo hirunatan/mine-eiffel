@@ -22,7 +22,7 @@ feature -- Test routines
 		local
 			storage: WORLD_STORAGE
 		do
-			storage.retrieve_object_by_slug("PLACE", "poblado-calle01") -- This time should create the object from definition
+			storage.retrieve_object_by_slug({STORABLE_TYPE}.Place, "poblado-calle01") -- This time should create the object from definition
 			if storage.error_occurred then
 				assert ("create error, message: " + storage.last_error_message, False)
 			else
@@ -31,7 +31,7 @@ feature -- Test routines
 
         			storage.store_object ("PLACE", place)
 
-        			storage.retrieve_object_by_slug ("PLACE", place.slug) -- This time should retrieve the object from storage
+        			storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, place.slug) -- This time should retrieve the object from storage
         			if storage.error_occurred then
         				assert ("retrieve error, message: " + storage.last_error_message, False)
         			else
@@ -54,7 +54,7 @@ feature -- Test routines
 			storage: WORLD_STORAGE
 		do
 			create storage
-			storage.retrieve_object_by_slug ("PLACE", "dummy_area-dummy_place")
+			storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, "dummy_area-dummy_place")
 			if not storage.error_occurred then
 				assert ("This should not occur, the slug does not exist", False)
 			end

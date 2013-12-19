@@ -9,22 +9,15 @@ expanded class
 
 feature -- Access to files
 
-    get_definition_file_for(type: STRING): DEFINITION_FILE
-    		-- An instance of DEFINITION_FILE able to create objects of the given type.
-        do
-        	Result := get_registry @ type
-        end
-
-feature {NONE} -- Implementation
-
-	get_registry: TABLE [DEFINITION_FILE, STRING]
-			-- The registry is a table that maps a type name inheriting from WORLD_STORABLE
-			-- to an instance of DEFINITION_FILE. This hash is a globally shared object.
-		once
-		    create {HASH_TABLE [DEFINITION_FILE, STRING]} Result.make (10)
-
-		    -- Create the file instances
-		    Result.put(create {DEFINITION_FILE_PLACE}, "PLACE")
+	get_definition_file_for (type: INTEGER; slug: NON_EMPTY_STRING): DEFINITION_FILE
+			-- The instance of DEFINITION_FILE for the object of the given type with the given slug.
+		require
+			valid_type: (create {STORABLE_TYPE}).is_valid_type (type)
+		do
+			inspect type
+			when {STORABLE_TYPE}.Place then
+				create {DEFINITION_FILE_PLACE} Result.make_with_slug (slug)
+			end
 		end
 
 end

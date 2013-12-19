@@ -22,8 +22,7 @@ feature -- Test routines
 			description_item: PLACE_DESCRIPTION_ITEM
 			exit: PLACE_EXIT
 		do
-			definition_file := registry.get_definition_file_for("PLACE")
-			definition_file.create_object_from_def ("poblado-calle01")
+			definition_file := registry.get_definition_file_for({STORABLE_TYPE}.Place, "poblado-calle01")
 			if not definition_file.error_occurred then
     			if attached {PLACE} definition_file.created_object as created_place then
     			    assert ("correctly retrieved", equal (created_place.slug.to_string, "poblado-calle01"))
@@ -71,8 +70,7 @@ feature -- Test routines
 			registry: DEFINITION_FILE_REGISTRY
 			definition_file: DEFINITION_FILE
 		do
-			definition_file := registry.get_definition_file_for("PLACE")
-			definition_file.create_object_from_def ("dummy_area-dummy_place")
+			definition_file := registry.get_definition_file_for({STORABLE_TYPE}.Place, "dummy_area-dummy_place")
 			if not definition_file.error_occurred then
 				assert ("This should not occur, the slug does not exist", False)
 			end
