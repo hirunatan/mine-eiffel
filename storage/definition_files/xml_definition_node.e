@@ -46,8 +46,9 @@ feature -- Access
 			end
 		end
 
-	non_empty_string_attribute (attribute_name: STRING): NON_EMPTY_STRING
-			-- Get a non empty string attribute, raise an exception if it does not exist or is not valid
+	non_empty_string_attribute (attribute_name: STRING; default_value: detachable NON_EMPTY_STRING): NON_EMPTY_STRING
+			-- Get a non empty string attribute. If not exists and default_value is not void, return it;
+			-- If it is void or the attribute is not valid, raise an exception.
 		require
 		    not_empty: not is_empty
 		local
@@ -58,8 +59,12 @@ feature -- Access
     		    if attached d_attr as attr and then not attr.value.is_empty then
     		    	create Result.make_from_string(attr.value.as_string_32)
     		    else
-    				raise ("Cannot find attribute '" + attribute_name + "' of element '" + elem.name + "'")
-    				Result := "xx"  -- Required by void safety, this will never execute
+    		    	if attached default_value then
+    		    	    Result := default_value
+    		    	else
+    					raise ("Cannot find attribute '" + attribute_name + "' of element '" + elem.name + "'")
+    					Result := "xx"  -- Required by void safety, this will never execute
+    		    	end
     		    end
     		else
     		    Result := "xx"  -- Required by void safety, this will never execute

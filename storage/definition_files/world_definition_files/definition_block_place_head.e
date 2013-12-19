@@ -14,8 +14,8 @@ feature -- Constructor
 
 	make_from_root_node (root_node: XML_DEFINITION_NODE)
 		do
-			author := root_node.non_empty_string_attribute ("autor")
-			area_name := root_node.non_empty_string_attribute ("area")
+			author := root_node.non_empty_string_attribute ("autor", Void)
+			area_name := root_node.non_empty_string_attribute ("area", Void)
 		end
 
 feature -- Access

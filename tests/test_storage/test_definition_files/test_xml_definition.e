@@ -59,7 +59,7 @@ feature -- Test routines
 			create xml_definition.make_from_file (file)
 			assert ("definition correct", not xml_definition.error_occurred)
 			assert ("not empty root", not xml_definition.root_node.is_empty)
-			attr := xml_definition.root_node.non_empty_string_attribute ("area")
+			attr := xml_definition.root_node.non_empty_string_attribute ("area", Void)
 			assert ("attr correct", equal(attr.to_string, "poblado"))
 		end
 
@@ -75,7 +75,7 @@ feature -- Test routines
 				create xml_definition.make_from_file (file)
     			assert ("definition correct", not xml_definition.error_occurred)
     			assert ("not empty root", not xml_definition.root_node.is_empty)
-    			attr := xml_definition.root_node.non_empty_string_attribute ("dummy_attribute")
+    			attr := xml_definition.root_node.non_empty_string_attribute ("dummy_attribute", Void)
     			assert ("exception raise", False)
 			end
 		rescue
