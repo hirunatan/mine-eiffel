@@ -18,7 +18,7 @@ feature {NONE} -- Initialization
 	make
 			-- Run application.
 		do
-			create random.make
+			create dices.make
 			storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, "poblado-calle01")
 			if storage.error_occurred then
 				print ("Error recuperando sala inicial: " + storage.last_error_message)
@@ -37,13 +37,14 @@ feature {NONE} -- Implementation
 
 	current_place: detachable PLACE
 
+	dices: DICES
+
 	quit: BOOLEAN
 
 	main_loop
 		local
 		    command: STRING
 		    direction: NON_EMPTY_STRING
-		    i: INTEGER
     	do
     		from
     		    quit := False
@@ -78,28 +79,34 @@ feature {NONE} -- Implementation
         		print (color(31) + "Estás en " + place.place_name.to_string + "%N%N")
         		print (color(37) + "------- Descripción del lugar -------%N%N")
         		across place.description as desc_cursor loop
-        			random.forth
-        			if dice_roll_100.to_integer > desc_cursor.item.difficulty_level.to_integer then
+        			dices.forth
+        			if dices.roll_1d100 > desc_cursor.item.difficulty_level.to_integer then
         				print (desc_cursor.item.text.to_string + "%N%N")
         			end
         		end
         		print ("--------------------------------------%N%N")
         		across place.exits as exits_cursor loop
-        			random.forth
-        			if dice_roll_100.to_integer > exits_cursor.item.difficulty_level.to_integer then
+        			dices.forth
+        			if dices.roll_1d100 > exits_cursor.item.difficulty_level.to_integer then
 	        			print (color(36) + "Hacia el " + exits_cursor.item.direction.to_string + " ves " + exits_cursor.item.description.to_string + "%N")
 	        		end
        			end
        			first := True
        			across place.objects as objects_cursor loop
-        			random.forth
-        			if dice_roll_100.to_integer > objects_cursor.item.difficulty_level.to_integer then
-	       				if first then
-	       					print (color(32) + "%NAquí hay:%N")
-	       					first := False
-	       				end
-	       				print (objects_cursor.item.description + "%N")
-	       			end
+       				if objects_cursor.item.instances.count > 0 then
+	        			dices.forth
+	        			if dices.roll_1d100 > objects_cursor.item.difficulty_level.to_integer then
+		       				if first then
+		       					print (color(32) + "%NAquí hay:%N")
+		       					first := False
+		       				end
+		       				print (objects_cursor.item.description.to_string)
+		       				if objects_cursor.item.instances.count > 1 then
+		       					print (" (" + objects_cursor.item.instances.count.out + ")")
+		       				end
+		       				print ("%N")
+		       			end
+       				end
        			end
        			print (color(37))
 			end
@@ -134,13 +141,6 @@ feature {NONE} -- Implementation
 			-- ANSI codes to change the terminal text color
 		do
 			Result := "%/27/[0;" + color_number.out + "m"
-		end
-
-	random: RANDOM
-
-	dice_roll_100: MAGNITUDE_INT_100
-		do
-			Result := random.item \\ 100 + 1
 		end
 
 end

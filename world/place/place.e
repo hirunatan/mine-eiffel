@@ -59,6 +59,9 @@ feature -- Attributes
 	objects: LIST [PLACE_OBJECT]
 			-- The objects in this place
 
+	characters: INTEGER
+			-- The number of characters inside the place
+
 feature {NONE} -- Initialization
 
 	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_area_name: NON_EMPTY_STRING; the_place_name: NON_EMPTY_STRING;
@@ -79,6 +82,27 @@ feature {NONE} -- Initialization
 			description := the_description
 			exits := the_exits
 			objects := the_objects
+		end
+
+feature -- Operation
+
+	enter_character
+			-- Enter a character in the place
+		do
+            characters := characters + 1
+            across objects as objects_cursor loop
+	            objects_cursor.item.character_entered
+	        end
+        ensure
+            characters_incremented: characters = old characters + 1
+		end
+
+    exit_character
+			-- Exit character from the place
+		do
+            characters := characters - 1
+        ensure
+            characters_decremented: characters = old characters - 1
 		end
 
 end
