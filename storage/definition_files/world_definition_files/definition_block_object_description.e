@@ -24,7 +24,7 @@ feature -- Constructor
 		    item_name: STRING
 		do
 		    descripcion_node := root_node.required_sub_node("descripcion")
-		    create {ARRAYED_LIST [OBJECT_DESCRIPTION_ITEM]} description.make (0)
+		    create description.make
 		    across descripcion_node as item_cursor loop
 				if not item_cursor.item.is_empty then
 					item_name := item_cursor.item.name
@@ -42,6 +42,6 @@ feature -- Constructor
 
 feature -- Access
 
-    description: LIST [OBJECT_DESCRIPTION_ITEM]
+    description: OBJECT_DESCRIPTION
 
 end

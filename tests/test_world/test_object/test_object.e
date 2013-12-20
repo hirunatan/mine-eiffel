@@ -28,7 +28,7 @@ feature
 				create {MAGNITUDE_REAL_POSITIVE}.make_from_real(0.5),
 				create {MAGNITUDE_REAL_POSITIVE}.make_from_real(3.5),
 				100, 10,
-				create {ARRAYED_LIST [OBJECT_DESCRIPTION_ITEM]}.make (0)
+				create {OBJECT_DESCRIPTION}.make
 			)
 			assert ("good_slug", equal (object.slug.to_string, "test_object"))
 			assert ("good_author", equal (object.author.to_string, "object author"))

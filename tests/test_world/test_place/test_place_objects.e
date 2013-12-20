@@ -52,4 +52,5 @@ feature -- Test routines
 			visible_objects := place_objects.visible_objects (20)
 		end
 
+	-- TODO: make tests for other methods of world logic
 end
