@@ -21,10 +21,10 @@ feature -- Constructor
 		    difficulty_level: MAGNITUDE_INT_100
 		    quantity: MAGNITUDE_INT_POSITIVE
 		    object_description: NON_EMPTY_STRING
-		    object: PLACE_OBJECT
+		    place_object: PLACE_OBJECT
 		do
 		    objetos_node := root_node.required_sub_node("objetos")
-		    create {ARRAYED_LIST [PLACE_OBJECT]} objects.make (0)
+		    create {ARRAYED_LIST [PLACE_OBJECT]} place_objects.make (0)
 	    	across objetos_node as objeto_cursor loop
 	    		if not objeto_cursor.item.is_empty then
 					object_slug := objeto_cursor.item.non_empty_string_attribute("id", Void)
@@ -33,14 +33,14 @@ feature -- Constructor
 				    difficulty_level := objeto_cursor.item.magnitude_int_100_attribute("dificultad", 0)
 				    quantity := objeto_cursor.item.magnitude_int_positive_attribute("cantidad", 0)
 				    object_description := objeto_cursor.item.non_empty_content
-				    create object.make (object_slug, probability, maximum, difficulty_level, quantity, object_description)
-				    objects.extend (object)
+				    create place_object.make (object_slug, probability, maximum, difficulty_level, quantity, object_description)
+				    place_objects.extend (place_object)
 				end
 			end
 		end
 
 feature -- Access
 
-    objects: LIST [PLACE_OBJECT]
+    place_objects: LIST [PLACE_OBJECT]
 
 end

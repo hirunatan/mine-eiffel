@@ -42,7 +42,7 @@ feature
 			assert ("good_hiding_value", place.hiding_value.to_integer = 20)
 			assert ("good_description", place.description.count = 0)
 			assert ("good_exits", place.exits.count = 0)
-			assert ("good_objects", place.objects.count = 0)
+			assert ("good_objects", place.place_objects.count = 0)
 		end
 
 end

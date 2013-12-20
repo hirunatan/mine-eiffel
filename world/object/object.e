@@ -53,6 +53,41 @@ feature -- Attributes
 	description: LIST [OBJECT_DESCRIPTION_ITEM]
 			-- The visible description of the objects (composed of items, some of that which not be visible for a character)
 
+	-- TODO: this method should be in other place
+	normalized_name: STRING
+			-- If the object_name contains [], the normalized name is what there is inside them
+			-- (for example, "a simple [bucket]". If not, the normalized name is the first word
+			-- that is not an article.
+		local
+			name_string: STRING
+			start_pos, end_pos: INTEGER
+			pieces: LIST [STRING]
+			name_found: STRING
+			articles: ARRAY [STRING]
+		do
+			articles :=
+				<<"el", "la", "los", "las", "un", "uno", "una", "unos", "unas", "que",
+				  "El", "La", "Los", "Las", "Un", "Uno", "Una", "Unos", "Unas", "Que">>
+
+			name_string := object_name.to_string
+			start_pos := name_string.index_of('[', 1)
+			end_pos := name_string.index_of(']', 1)
+			if start_pos > 0 and end_pos > 0 and (start_pos < end_pos) then
+				name_found := name_string.substring(start_pos, end_pos)
+			else
+				pieces := object_name.to_string.split (' ')
+				name_found := "not found"
+				across pieces as pc loop
+					if not across articles as ac some equal(ac.item, pc.item) end then
+						if equal(name_found, "not found") then
+							name_found := pc.item
+						end
+					end
+				end
+			end
+			Result := name_found
+		end
+
 feature {NONE} -- Initialization
 
 	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_object_name: NON_EMPTY_STRING;

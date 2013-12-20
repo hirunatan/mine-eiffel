@@ -13,7 +13,7 @@ feature -- Object types
 
 feature -- Access
 
-	store_object (type: STRING; object: WORLD_STORABLE)
+	store_object (type: INTEGER; object: WORLD_STORABLE)
 			-- Store an object of a type with all its contents into world storage.
 		local
 			file_name: STRING

@@ -38,7 +38,7 @@ feature {DEFINITION_FILE} -- Redefinitions
 		    properties_block: DEFINITION_BLOCK_PLACE_PROPERTIES
 		    description_block: DEFINITION_BLOCK_PLACE_DESCRIPTION
 		    exits_block: DEFINITION_BLOCK_PLACE_EXITS
-		    objects_block: DEFINITION_BLOCK_PLACE_OBJECTS
+		    place_objects_block: DEFINITION_BLOCK_PLACE_OBJECTS
 		do
 			create head_block.make_from_root_node (xml_definition.root_node)
 			create id_block.make_from_root_node (xml_definition.root_node, slug)
@@ -46,11 +46,11 @@ feature {DEFINITION_FILE} -- Redefinitions
 			create properties_block.make_from_root_node (xml_definition.root_node)
 			create description_block.make_from_root_node (xml_definition.root_node)
 			create exits_block.make_from_root_node (xml_definition.root_node)
-			create objects_block.make_from_root_node (xml_definition.root_node)
+			create place_objects_block.make_from_root_node (xml_definition.root_node)
 
 			create {PLACE} created_object.make (
 				slug, head_block.author, head_block.area_name, name_block.place_name, properties_block.aura, properties_block.place_type, properties_block.place_subtype,
-				properties_block.capacity, properties_block.light, properties_block.hiding_value, description_block.description, exits_block.exits, objects_block.objects
+				properties_block.capacity, properties_block.light, properties_block.hiding_value, description_block.description, exits_block.exits, place_objects_block.place_objects
 			)
 		end
 

@@ -32,9 +32,11 @@ feature -- Attributes
 			-- The descriptive text of this object as seen by characters when look at the place
 
 	instances: LIST [OBJECT]
-			-- One or more actual instances of the object
+			-- One or more actual instances of the object. There always be at least one instance,
+			-- unles probability > 0, in which case it's allowed to have empty instances since
+			-- they can be generated next time a character enters the place.
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make (the_object_slug: NON_EMPTY_STRING; the_probability: MAGNITUDE_INT_100; the_maximum: MAGNITUDE_INT_POSITIVE;
           the_difficulty_level: MAGNITUDE_INT_100; the_quantity: MAGNITUDE_INT_POSITIVE; the_description: NON_EMPTY_STRING)
@@ -63,7 +65,7 @@ feature -- Events
 	do
 		if probability > 0 then
 			dices.roll_1d100
-        	if dices.roll_result > probability.to_integer then
+        	if dices.roll_result <= probability.to_integer then
         		dices.roll_1d100
         		if dices.roll_result > 50 then
         			if instances.count < maximum then
@@ -76,9 +78,13 @@ feature -- Events
         		end
         	end
 		end
+	ensure
+		objects_appearing: instances.count = old instances.count + 1 or
+		                   instances.count = old instances.count - 1 or
+		                   instances.count = old instances.count
 	end
 
-feature -- Implementation
+feature {NONE} -- Implementation
 
 	dices: DICES
 
@@ -99,12 +105,13 @@ feature -- Implementation
 
 	object_disappears
 		do
-			instances.prune (instances[0])
+			instances.prune (instances[1])
 		ensure
 			one_less_object: instances.count = old instances.count - 1
 		end
 
 invariant
 	instances_not_full: maximum.to_integer = 0 or instances.count <= maximum
+	existing_instances: instances.count > 0 or probability.to_integer > 0
 
 end

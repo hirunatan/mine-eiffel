@@ -29,7 +29,7 @@ feature -- Test routines
     			if attached {PLACE} storage.retrieved_object as place then
     				assert ("correctly retrieved", equal (place.slug.to_string, "poblado-calle01"))
 
-        			storage.store_object ("PLACE", place)
+        			storage.store_object ({STORABLE_TYPE}.Place, place)
 
         			storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, place.slug) -- This time should retrieve the object from storage
         			if storage.error_occurred then
