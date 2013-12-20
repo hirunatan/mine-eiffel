@@ -25,7 +25,7 @@ feature -- Test routines
 			create place_exits.make
 		end
 
-	test_add_remove_item
+	test_add_remove_exit
 		note
 			testing: "covers/{PLACE_EXITS}.extend", "covers/{PLACE_EXITS}.prune", "covers/{PLACE_EXITS}.new_cursor"
 		local
@@ -39,17 +39,17 @@ feature -- Test routines
 			place_exits.prune (place_exits[1])
 		end
 
-	test_visible_items
+	test_visible_exits
 		note
-			testing: "covers/{PLACE_EXITS}.visible_items"
+			testing: "covers/{PLACE_EXITS}.visible_exits"
 		local
 			place_exits: PLACE_EXITS
-			visible_items: LIST [PLACE_EXIT]
+			visible_exits: LIST [PLACE_EXIT]
 		do
 			create place_exits.make
 			place_exits.extend (create {PLACE_EXIT}.make("north", "test-place-1", 10, "visible test exit"))
 			place_exits.extend (create {PLACE_EXIT}.make("south", "test-place-2", 40, "invisible test exits"))
-			visible_items := place_exits.visible_exits (20)
+			visible_exits := place_exits.visible_exits (20)
 		end
 
 end

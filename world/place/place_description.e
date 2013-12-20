@@ -22,7 +22,7 @@ feature -- Access
 		end
 
 	i_th alias "[]" (i: INTEGER): PLACE_DESCRIPTION_ITEM
-			-- Item at `i'-th position
+			-- The item at `i'-th position
 		require
 			valid_index: valid_index (i)
 		do
@@ -61,7 +61,7 @@ feature -- Modification
 		end
 
 	prune (description_item: PLACE_DESCRIPTION_ITEM)
-			-- Remove all occurences of item from the description, if exists (if not, does nothing)
+			-- Remove all occurences of the item from the description, if exists (if not, does nothing)
 		do
 			description_items.prune_all (description_item)
 		ensure

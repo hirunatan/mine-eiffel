@@ -76,9 +76,9 @@ feature {NONE} -- Implementation
 	   		    	if pieces.count < 2 then
 	   		    		print ("El comando +coger necesita que digas qué objeto coger")
 	   		    	else
-	   		    		object := place.object_by_name (pieces[2])
+	   		    		object := place.place_objects.by_name (pieces[2])
 	   		    		if attached object as obj then
-	   		    			place.take_object (obj)
+	   		    			place.place_objects.take (obj)
 	   		    			print ("Has cogido " + obj.object_name.to_string)
 	   		    		else
 	   		    			print ("Aquí no hay ningún objeto llamado " + pieces[2])

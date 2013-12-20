@@ -22,7 +22,7 @@ feature -- Access
 		end
 
 	i_th alias "[]" (i: INTEGER): PLACE_EXIT
-			-- Item at `i'-th position
+			-- The exit at `i'-th position
 		require
 			valid_index: valid_index (i)
 		do
@@ -61,7 +61,7 @@ feature -- Modification
 		end
 
 	prune (exit: PLACE_EXIT)
-			-- Remove all occurences of exit from the list, if exists (if not, does nothing)
+			-- Remove all occurences of the exit from the list, if exists (if not, does nothing)
 		do
 			exits.prune_all (exit)
 		ensure

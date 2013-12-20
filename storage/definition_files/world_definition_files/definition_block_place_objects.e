@@ -24,7 +24,7 @@ feature -- Constructor
 		    place_object: PLACE_OBJECT
 		do
 		    objetos_node := root_node.required_sub_node("objetos")
-		    create {ARRAYED_LIST [PLACE_OBJECT]} place_objects.make (0)
+		    create {PLACE_OBJECTS} place_objects.make
 	    	across objetos_node as objeto_cursor loop
 	    		if not objeto_cursor.item.is_empty then
 					object_slug := objeto_cursor.item.non_empty_string_attribute("id", Void)
@@ -41,6 +41,6 @@ feature -- Constructor
 
 feature -- Access
 
-    place_objects: LIST [PLACE_OBJECT]
+    place_objects: PLACE_OBJECTS
 
 end

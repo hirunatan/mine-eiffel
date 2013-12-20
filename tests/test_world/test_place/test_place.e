@@ -27,7 +27,7 @@ feature
 				create {MAGNITUDE_REAL_POSITIVE}.make_from_real(500.5), 40, 20,
 				create {PLACE_DESCRIPTION}.make,
 				create {PLACE_EXITS}.make,
-				create {ARRAYED_LIST [PLACE_OBJECT]}.make (0)
+				create {PLACE_OBJECTS}.make
 			)
 
 			assert ("good_slug", equal (place.slug.to_string, "test_area-test_place"))
