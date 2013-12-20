@@ -48,18 +48,12 @@ feature -- Test routines
     			    assert ("correct light", created_place.light.to_integer = 60)
     			    assert ("correct hiding_value", created_place.hiding_value.to_integer = 10)
     			    assert ("correct description count", created_place.description.count = 3)
-    			    across created_place.description as pdc loop
-    			        assert ("correct description_item difficulty", pdc.item.difficulty_level.to_integer = 0)
+    			    across created_place.description as dc loop
+    			        assert ("correct description_item difficulty", dc.item.difficulty_level.to_integer = 0)
     			    end
     			    assert ("correct exits count", created_place.exits.count = 4)
-    			    from
-    			        created_place.exits.start
-    			    until
-    			        created_place.exits.after
-    			    loop
-    			        exit := created_place.exits.item_for_iteration
-    			        assert ("correct exit difficulty", exit.difficulty_level.to_integer = 0)
-    			        created_place.exits.forth
+    			    across created_place.exits as ec loop
+    			        assert ("correct exit difficulty", ec.item.difficulty_level.to_integer = 0)
     			    end
     			else
     			    assert ("object retrieved is not a place", False)
@@ -91,14 +85,8 @@ feature -- Test routines
     			    assert ("correct state", created_object.state.to_integer = 100)
     			    assert ("correct aura", created_object.aura.to_integer = 40)
     			    assert ("correct description count", created_object.description.count = 1)
-    			    from
-    			        created_object.description.start
-    			    until
-    			        created_object.description.after
-    			    loop
-    			        description_item := created_object.description.item_for_iteration
-    			        assert ("correct description_item difficulty", description_item.difficulty_level.to_integer = 0)
-    			        created_object.description.forth
+    			    across created_object.description as dc loop
+    			        assert ("correct description_item difficulty", dc.item.difficulty_level.to_integer = 0)
     			    end
     			else
     			    assert ("object retrieved is not an object", False)

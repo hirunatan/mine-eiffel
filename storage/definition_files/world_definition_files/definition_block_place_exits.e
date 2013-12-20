@@ -22,7 +22,7 @@ feature -- Constructor
 		    exit: PLACE_EXIT
 		do
 		    salidas_node := root_node.required_sub_node("salidas")
-		    create {ARRAYED_LIST [PLACE_EXIT]} exits.make (0)
+		    create exits.make
 	    	across salidas_node as salida_cursor loop
 	    		if not salida_cursor.item.is_empty then
 					create direction.make_from_string (salida_cursor.item.name)
@@ -37,6 +37,6 @@ feature -- Constructor
 
 feature -- Access
 
-    exits: LIST [PLACE_EXIT]
+    exits: PLACE_EXITS
 
 end

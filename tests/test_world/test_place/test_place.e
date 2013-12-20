@@ -26,7 +26,7 @@ feature
 				"test_area-test_place", "test author", "test_area", "The place of test", 50, "place type", "place subtype",
 				create {MAGNITUDE_REAL_POSITIVE}.make_from_real(500.5), 40, 20,
 				create {PLACE_DESCRIPTION}.make,
-				create {ARRAYED_LIST [PLACE_EXIT]}.make (0),
+				create {PLACE_EXITS}.make,
 				create {ARRAYED_LIST [PLACE_OBJECT]}.make (0)
 			)
 

@@ -112,16 +112,14 @@ feature {NONE} -- Implementation
         			print (vic.item.text.to_string + "%N%N")
         		end
         		print ("--------------------------------------%N%N")
-        		across place.exits as exits_cursor loop
-        			if perception_roll > exits_cursor.item.difficulty_level.to_integer then
-	        			print (color(36))
-	        			if equal(exits_cursor.item.direction.to_string, "arriba") or equal(exits_cursor.item.direction.to_string, "abajo") then
-	        				print ("Hacia " + exits_cursor.item.direction.to_string)
-	        			else
-	        				print ("Hacia el " + exits_cursor.item.direction.to_string)
-	        			end
-	        			print (" ves " + exits_cursor.item.description.to_string + "%N")
-	        		end
+        		across place.exits.visible_exits (perception_roll) as vec loop
+        			print (color(36))
+        			if equal(vec.item.direction.to_string, "arriba") or equal(vec.item.direction.to_string, "abajo") then
+        				print ("Hacia " + vec.item.direction.to_string)
+        			else
+        				print ("Hacia el " + vec.item.direction.to_string)
+        			end
+        			print (" ves " + vec.item.description.to_string + "%N")
        			end
        			first := True
        			across place.place_objects as objects_cursor loop
