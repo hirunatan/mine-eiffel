@@ -7,20 +7,20 @@ note
 class
 	STORABLE_TYPE
 
-	 -- This should be a better implementation of an ENUM type
-	 -- For example, see http://dev.eiffel.com/Enums_in_Eiffel
+	-- This should be a better implementation of an ENUM type
+	-- For example, see http://dev.eiffel.com/Enums_in_Eiffel
 
 feature -- Enum values
 
-    Place: INTEGER = 1
+	Place: INTEGER = 1
 
-    Object: INTEGER = 2
+	Object: INTEGER = 2
 
 feature -- Validation
 
-    is_valid_type(type: INTEGER): BOOLEAN
-    	do
-    	    Result := (type = Place or type = Object)
-    	end
+	is_valid_type(type: INTEGER): BOOLEAN
+		do
+			Result := (type = Place or type = Object)
+		end
 
 end

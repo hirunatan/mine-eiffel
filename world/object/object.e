@@ -91,21 +91,21 @@ feature -- Attributes
 feature {NONE} -- Initialization
 
 	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_object_name: NON_EMPTY_STRING;
-              the_object_type: NON_EMPTY_STRING; the_object_category: NON_EMPTY_STRING; the_weight: MAGNITUDE_REAL_POSITIVE;
-              the_size: MAGNITUDE_REAL_POSITIVE; the_price: MAGNITUDE_REAL_POSITIVE; the_state: MAGNITUDE_INT_100;
-              the_aura: MAGNITUDE_INT_100; the_description: OBJECT_DESCRIPTION)
+		  the_object_type: NON_EMPTY_STRING; the_object_category: NON_EMPTY_STRING; the_weight: MAGNITUDE_REAL_POSITIVE;
+		  the_size: MAGNITUDE_REAL_POSITIVE; the_price: MAGNITUDE_REAL_POSITIVE; the_state: MAGNITUDE_INT_100;
+		  the_aura: MAGNITUDE_INT_100; the_description: OBJECT_DESCRIPTION)
 		do
-            slug := the_slug
-            author := the_author
-            object_name := the_object_name
-            object_type := the_object_type
-            object_category := the_object_category
-            weight := the_weight
-            size := the_size
-            price := the_price
-            state := the_state
-            aura := the_aura
-            description := the_description
+			slug := the_slug
+			author := the_author
+			object_name := the_object_name
+			object_type := the_object_type
+			object_category := the_object_category
+			weight := the_weight
+			size := the_size
+			price := the_price
+			state := the_state
+			aura := the_aura
+			description := the_description
 		end
 
 end

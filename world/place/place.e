@@ -65,9 +65,9 @@ feature -- Attributes
 feature {NONE} -- Initialization
 
 	make (the_slug: NON_EMPTY_STRING; the_author: NON_EMPTY_STRING; the_area_name: NON_EMPTY_STRING; the_place_name: NON_EMPTY_STRING;
-	      the_aura: MAGNITUDE_INT_100; the_place_type: NON_EMPTY_STRING; the_place_subtype: NON_EMPTY_STRING;
-	      the_capacity: MAGNITUDE_REAL_POSITIVE; the_light: MAGNITUDE_INT_100; the_hiding_value: MAGNITUDE_INT_100;
-	      the_description: PLACE_DESCRIPTION; the_exits: PLACE_EXITS; the_place_objects: PLACE_OBJECTS)
+		  the_aura: MAGNITUDE_INT_100; the_place_type: NON_EMPTY_STRING; the_place_subtype: NON_EMPTY_STRING;
+		  the_capacity: MAGNITUDE_REAL_POSITIVE; the_light: MAGNITUDE_INT_100; the_hiding_value: MAGNITUDE_INT_100;
+		  the_description: PLACE_DESCRIPTION; the_exits: PLACE_EXITS; the_place_objects: PLACE_OBJECTS)
 		do
 			slug := the_slug
 			author := the_author
@@ -89,18 +89,18 @@ feature -- World logic
 	enter_character
 			-- Enter a character in the place
 		do
-            characters := characters + 1
-            place_objects.character_entered
-        ensure
-            characters_incremented: characters = old characters + 1
+			characters := characters + 1
+			place_objects.character_entered
+		ensure
+			characters_incremented: characters = old characters + 1
 		end
 
-    exit_character
+	exit_character
 			-- Exit character from the place
 		do
-            characters := characters - 1
-        ensure
-            characters_decremented: characters = old characters - 1
+			characters := characters - 1
+		ensure
+			characters_decremented: characters = old characters - 1
 		end
 
 end

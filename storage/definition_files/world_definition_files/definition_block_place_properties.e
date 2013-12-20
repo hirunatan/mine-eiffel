@@ -14,10 +14,10 @@ feature -- Constructor
 
 	make_from_root_node (root_node: XML_DEFINITION_NODE)
 		local
-		    propiedades_node: XML_DEFINITION_NODE
+			propiedades_node: XML_DEFINITION_NODE
 		do
-		    propiedades_node := root_node.required_sub_node("propiedades")
-		    aura := propiedades_node.magnitude_int_100_attribute("aura", Void)
+			propiedades_node := root_node.required_sub_node("propiedades")
+			aura := propiedades_node.magnitude_int_100_attribute("aura", Void)
 			place_type := propiedades_node.non_empty_string_attribute("tipo", create {NON_EMPTY_STRING}.make_from_string ("Tipo por defecto"))
 			place_subtype := propiedades_node.non_empty_string_attribute("subtipo", create {NON_EMPTY_STRING}.make_from_string ("Tipo por defecto"))
 			capacity := propiedades_node.magnitude_real_positive_attribute("volumen", Void)
@@ -27,16 +27,16 @@ feature -- Constructor
 
 feature -- Access
 
-    aura: MAGNITUDE_INT_100
+	aura: MAGNITUDE_INT_100
 
-    place_type: NON_EMPTY_STRING
+	place_type: NON_EMPTY_STRING
 
-    place_subtype: NON_EMPTY_STRING
+	place_subtype: NON_EMPTY_STRING
 
-    capacity: MAGNITUDE_REAL_POSITIVE
+	capacity: MAGNITUDE_REAL_POSITIVE
 
-    light: MAGNITUDE_INT_100
+	light: MAGNITUDE_INT_100
 
-    hiding_value: MAGNITUDE_INT_100
+	hiding_value: MAGNITUDE_INT_100
 
 end

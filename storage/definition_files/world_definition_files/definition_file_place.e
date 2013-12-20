@@ -16,14 +16,14 @@ inherit
 		end
 
 create {DEFINITION_FILE_REGISTRY}
-    make_with_slug
+	make_with_slug
 
 feature {NONE} -- Constructor
 
 	make_with_slug (the_slug: NON_EMPTY_STRING)
 		do
-		    slug := the_slug
-		    create_object_from_definition
+			slug := the_slug
+			create_object_from_definition
 		end
 
 feature {DEFINITION_FILE} -- Redefinitions
@@ -32,13 +32,13 @@ feature {DEFINITION_FILE} -- Redefinitions
 
 	instantiate_object (xml_definition: XML_DEFINITION)
 		local
-		    head_block: DEFINITION_BLOCK_PLACE_HEAD
-		    id_block: DEFINITION_BLOCK_PLACE_ID
-		    name_block: DEFINITION_BLOCK_PLACE_NAME
-		    properties_block: DEFINITION_BLOCK_PLACE_PROPERTIES
-		    description_block: DEFINITION_BLOCK_PLACE_DESCRIPTION
-		    exits_block: DEFINITION_BLOCK_PLACE_EXITS
-		    place_objects_block: DEFINITION_BLOCK_PLACE_OBJECTS
+			head_block: DEFINITION_BLOCK_PLACE_HEAD
+			id_block: DEFINITION_BLOCK_PLACE_ID
+			name_block: DEFINITION_BLOCK_PLACE_NAME
+			properties_block: DEFINITION_BLOCK_PLACE_PROPERTIES
+			description_block: DEFINITION_BLOCK_PLACE_DESCRIPTION
+			exits_block: DEFINITION_BLOCK_PLACE_EXITS
+			place_objects_block: DEFINITION_BLOCK_PLACE_OBJECTS
 		do
 			create head_block.make_from_root_node (xml_definition.root_node)
 			create id_block.make_from_root_node (xml_definition.root_node, slug)

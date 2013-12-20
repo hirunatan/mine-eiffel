@@ -14,10 +14,10 @@ feature -- Constructor
 
 	make_from_root_node (root_node: XML_DEFINITION_NODE)
 		local
-		    nombre_node: XML_DEFINITION_NODE
+			nombre_node: XML_DEFINITION_NODE
 		do
-		    nombre_node := root_node.required_sub_node("nombre")
-		    object_name := nombre_node.non_empty_content
+			nombre_node := root_node.required_sub_node("nombre")
+			object_name := nombre_node.non_empty_content
 		end
 
 feature -- Access

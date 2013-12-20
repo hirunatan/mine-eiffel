@@ -30,24 +30,24 @@ feature -- Access
 
 	is_empty: BOOLEAN
 		do
-		    Result := (cursor = Void)
+			Result := (cursor = Void)
 		end
 
 	item: XML_DEFINITION_NODE
 		require else
-		    not_empty: not is_empty
+			not_empty: not is_empty
 		local
-		    xml_node: XML_NODE
+			xml_node: XML_NODE
 		do
 			if attached cursor as cur then
-			    xml_node := cur.item
-			    if attached {XML_ELEMENT} xml_node as xml_element then
-			    	create Result.make_from_element(xml_element)
-			    else
-			        create Result.make_empty
-			    end
+				xml_node := cur.item
+				if attached {XML_ELEMENT} xml_node as xml_element then
+					create Result.make_from_element(xml_element)
+				else
+					create Result.make_empty
+				end
 			else
-			    create Result.make_empty
+				create Result.make_empty
 			end
 		end
 
@@ -55,16 +55,16 @@ feature -- Cursor movement
 
 	start
 		require else
-		    not_empty: not is_empty
+			not_empty: not is_empty
 		do
 			if attached cursor as cur then
-			    cur.start
+				cur.start
 			end
 		end
 
 	forth
 		require else
-		    not_empty: not is_empty
+			not_empty: not is_empty
 		do
 			if attached cursor as cur then
 				cur.forth
@@ -76,12 +76,12 @@ feature -- Status report
 
 	after: BOOLEAN
 		require else
-		    not_empty: not is_empty
+			not_empty: not is_empty
 		do
 			if attached cursor as cur then
-			    Result := cur.after
+				Result := cur.after
 			else
-			    Result := True
+				Result := True
 			end
 		end
 
@@ -92,7 +92,7 @@ feature {NONE} -- Implementation
 	skip_non_elements
 			-- Skip any node that is not a XML_ELEMENT
 		require
-		    not_empty: not is_empty
+			not_empty: not is_empty
 		do
 			if attached cursor as cur then
 				from

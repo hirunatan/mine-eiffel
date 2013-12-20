@@ -89,9 +89,9 @@ feature -- World logic
 	character_entered
 			-- Event of that a character has entered in the place
 		do
-            across objects as oc loop
-	            oc.item.character_entered
-	        end
+			across objects as oc loop
+				oc.item.character_entered
+			end
 		end
 
 	by_name (name: STRING): detachable OBJECT

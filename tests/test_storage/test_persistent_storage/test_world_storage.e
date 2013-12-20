@@ -26,24 +26,24 @@ feature -- Test routines
 			if storage.error_occurred then
 				assert ("create error, message: " + storage.last_error_message, False)
 			else
-    			if attached {PLACE} storage.retrieved_object as place then
-    				assert ("correctly retrieved", equal (place.slug.to_string, "poblado-calle01"))
+				if attached {PLACE} storage.retrieved_object as place then
+					assert ("correctly retrieved", equal (place.slug.to_string, "poblado-calle01"))
 
-        			storage.store_object ({STORABLE_TYPE}.Place, place)
+					storage.store_object ({STORABLE_TYPE}.Place, place)
 
-        			storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, place.slug) -- This time should retrieve the object from storage
-        			if storage.error_occurred then
-        				assert ("retrieve error, message: " + storage.last_error_message, False)
-        			else
-            			if attached {PLACE} storage.retrieved_object as other_place then
-            				assert ("correctly retrieved", equal (place.slug.to_string, other_place.slug.to_string))
-            			else
-            			    assert ("object retrieved is not a place", False)
-            			end
-            		end
-            	else
-    			    assert ("object retrieved is not a place", False)
-    			end
+					storage.retrieve_object_by_slug ({STORABLE_TYPE}.Place, place.slug) -- This time should retrieve the object from storage
+					if storage.error_occurred then
+						assert ("retrieve error, message: " + storage.last_error_message, False)
+					else
+						if attached {PLACE} storage.retrieved_object as other_place then
+							assert ("correctly retrieved", equal (place.slug.to_string, other_place.slug.to_string))
+						else
+							assert ("object retrieved is not a place", False)
+						end
+					end
+				else
+					assert ("object retrieved is not a place", False)
+				end
 			end
 		end
 

@@ -16,14 +16,14 @@ inherit
 		end
 
 create {DEFINITION_FILE_REGISTRY}
-    make_with_slug
+	make_with_slug
 
 feature {NONE} -- Constructor
 
 	make_with_slug (the_slug: NON_EMPTY_STRING)
 		do
-		    slug := the_slug
-		    create_object_from_definition
+			slug := the_slug
+			create_object_from_definition
 		end
 
 feature {DEFINITION_FILE} -- Redefinitions
@@ -32,11 +32,11 @@ feature {DEFINITION_FILE} -- Redefinitions
 
 	instantiate_object (xml_definition: XML_DEFINITION)
 		local
-		    head_block: DEFINITION_BLOCK_OBJECT_HEAD
-		    id_block: DEFINITION_BLOCK_OBJECT_ID
-		    name_block: DEFINITION_BLOCK_OBJECT_NAME
-		    properties_block: DEFINITION_BLOCK_OBJECT_PROPERTIES
-		    description_block: DEFINITION_BLOCK_OBJECT_DESCRIPTION
+			head_block: DEFINITION_BLOCK_OBJECT_HEAD
+			id_block: DEFINITION_BLOCK_OBJECT_ID
+			name_block: DEFINITION_BLOCK_OBJECT_NAME
+			properties_block: DEFINITION_BLOCK_OBJECT_PROPERTIES
+			description_block: DEFINITION_BLOCK_OBJECT_DESCRIPTION
 		do
 			create head_block.make_from_root_node (xml_definition.root_node)
 			create id_block.make_from_root_node (xml_definition.root_node, slug)
@@ -46,7 +46,7 @@ feature {DEFINITION_FILE} -- Redefinitions
 
 			create {OBJECT} created_object.make (
 				slug, head_block.author, name_block.object_name, properties_block.object_type, properties_block.object_category,
-                properties_block.weight, properties_block.size, properties_block.price, properties_block.state, properties_block.aura,
+				properties_block.weight, properties_block.size, properties_block.price, properties_block.state, properties_block.aura,
 				description_block.description
 			)
 		end
