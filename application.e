@@ -108,10 +108,8 @@ feature {NONE} -- Implementation
         		print ("%N")
         		print (color(31) + "Estás en " + place.place_name.to_string + "%N%N")
         		print (color(37) + "------- Descripción del lugar -------%N%N")
-        		across place.description as desc_cursor loop
-        			if perception_roll > desc_cursor.item.difficulty_level.to_integer then
-        				print (desc_cursor.item.text.to_string + "%N%N")
-        			end
+        		across place.description.visible_items (perception_roll) as vic loop
+        			print (vic.item.text.to_string + "%N%N")
         		end
         		print ("--------------------------------------%N%N")
         		across place.exits as exits_cursor loop

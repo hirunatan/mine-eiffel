@@ -32,7 +32,6 @@ feature -- Test routines
 		local
 			registry: DEFINITION_FILE_REGISTRY
 			definition_file: DEFINITION_FILE
-			description_item: PLACE_DESCRIPTION_ITEM
 			exit: PLACE_EXIT
 		do
 			definition_file := registry.get_definition_file_for({STORABLE_TYPE}.Place, "poblado-calle01")
@@ -49,14 +48,8 @@ feature -- Test routines
     			    assert ("correct light", created_place.light.to_integer = 60)
     			    assert ("correct hiding_value", created_place.hiding_value.to_integer = 10)
     			    assert ("correct description count", created_place.description.count = 3)
-    			    from
-    			        created_place.description.start
-    			    until
-    			        created_place.description.after
-    			    loop
-    			        description_item := created_place.description.item_for_iteration
-    			        assert ("correct description_item difficulty", description_item.difficulty_level.to_integer = 0)
-    			        created_place.description.forth
+    			    across created_place.description as pdc loop
+    			        assert ("correct description_item difficulty", pdc.item.difficulty_level.to_integer = 0)
     			    end
     			    assert ("correct exits count", created_place.exits.count = 4)
     			    from
